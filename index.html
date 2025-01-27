@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ</title>
+    <!-- marked.jsのCDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@2.0.0/marked.min.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        // projects.mdを読み込んで表示する関数
+        async function loadMarkdown() {
+            const response = await fetch('README.md');
+            const text = await response.text();
+            document.getElementById('content').innerHTML = marked.parse(text);
+        }
+
+        // ページが読み込まれたら関数を呼び出す
+        window.onload = loadMarkdown;
+    </script>
+</body>

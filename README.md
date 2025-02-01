@@ -1,3 +1,1 @@
-# kenno-warise.github.io
-
-## Profile
+# 準備中...

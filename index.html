@@ -7,6 +7,8 @@
     <title>ポートフォリオ</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
@@ -19,21 +21,23 @@
 	<div class="col-sm-8">
 	  <h5 class="text-body-emphasis h4">私に関する情報</h5>
 	  <span class="text-body-secondary">準備中...</span>
-	  <ul class="text-body-emphasis">
-	    <li>
-	      <a>プロジェクト</a>
-	    </li>
-	    <li>
-	      <a>スキル</a>
-	    </li>
-	    <li>
-	      <a>ブログ</a>
-	    </li>
-	  </ul>
 	</div>
 	<div class="col-sm-4">
-	  <h5 class="text-body-emphasis h4">コンタクト</h5>
-	  <span class="text-body-secondary">準備中...</span>
+	  <h5 class="text-body-emphasis h4">メニュー</h5>
+	  <ul class="text-body-emphasis">
+	    <li>
+	      <a>プロジェクト（準備中...）</a>
+	    </li>
+	    <li>
+	      <a>スキル（準備中...）</a>
+	    </li>
+	    <li>
+	      <a>ブログ（準備中...）</a>
+	    </li>
+	    <li>
+	      <a>コンタクト（準備中...）</a>
+	    </li>
+	  </ul>
 	</div>
       </div>
     </div>
@@ -52,11 +56,11 @@
   <header class="py-5 text-center">
     <div class="container">
       <div class="row py-lg-5">
-	<div class="col-lg-6 col-md-8 mx-auto">
+	<div class="col-lg-8 col-md-8 mx-auto">
       <h1 class="display-6">ようこそポートフォリオサイトへ</h1>
       <p class="lead">
       こちらのサイトはGitHub Pagesのホスティングサービスにより提供しているWebサイトです。
-      現在は作成中のため退屈なポートフォリオとなっていますが、徐々に自己紹介文や今日までのスキル、
+      <mark>現在は作成中</mark>のため退屈なポートフォリオとなっていますが、徐々に自己紹介文や今日までのスキル、
       そしてこれまでに開発してきたプロジェクトのサンプルなどを掲載していく予定です。
       </p>
     </div>
@@ -64,15 +68,54 @@
     </div>
   </header>
 
-  <!-- Main -->
-  <main class="bg-light">
-    <div class="container">
-      <section class="py-5 text-center" id="about">
-	<h2>自己紹介</h2>
-	<div id="content"></div>
+    <!-- Main -->
+    <main>
+      <!-- プロフィール節 -->
+      <section class="py-5 text-center bg-light" id="about">
+	<div class="container">
+	  <div class="row py-lg-5">
+	    <div class="col-lg-8 col-md-8 mx-auto">
+	      <h1 class="display-6">自己紹介</h1>
+	      <div id="profile"></div>
+	    </div>
+	  </div>
+	</div>
       </section>
-    </div>
-  </main>
+      <!-- スキル節 -->
+      <section class="py-5 text-center" id="about">
+	<div class="container">
+	  <div class="row py-lg-5">
+	    <div class="col-lg-8 col-md-8 mx-auto">
+	      <h1 class="display-6">スキル</h1>
+	      <i class="bi bi-cone-striped" style="color:red; font-size: 3em;"></i>
+	      <div id="skills"></div>
+	    </div>
+	  </div>
+	</div>
+      </section>
+      <!-- プロジェクト節 -->
+      <section class="py-5 text-center bg-light" id="about">
+	<div class="container">
+	  <div class="row py-lg-5">
+	    <div class="col-lg-8 col-md-8 mx-auto">
+	      <h1 class="display-6">プロジェクト</h1>
+	      <i class="bi bi-cone-striped" style="color:red; font-size: 3em;"></i>
+	    </div>
+	  </div>
+	</div>
+      </section>
+      <!-- コンタクト節 -->
+      <section class="py-5 text-center" id="about">
+	<div class="container">
+	  <div class="row py-lg-5">
+	    <div class="col-lg-8 col-md-8 mx-auto">
+	      <h1 class="display-6">コンタクト</h1>
+	      <i class="bi bi-cone-striped" style="color:red; font-size: 3em;"></i>
+	    </div>
+	  </div>
+	</div>
+      </section>
+    </main>
 
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3 mt-auto">
@@ -88,7 +131,7 @@
     async function loadMarkdown() {
       const response = await fetch('README.md');
       const text = await response.text();
-      document.getElementById('content').innerHTML = marked.parse(text);
+      document.getElementById('profile').innerHTML = marked.parse(text);
     }
 
     // ページが読み込まれたら関数を呼び出す

@@ -76,7 +76,7 @@
 	  <div class="row py-lg-5">
 	    <div class="col-lg-8 col-md-8 mx-auto">
 	      <h1 class="display-6">自己紹介</h1>
-	      <div class="lead" id="profile"></div>
+	      <div lass="lead" id="profile"></div>
 	    </div>
 	  </div>
 	</div>
@@ -127,15 +127,29 @@
   <!-- marked.jsのCDN -->
   <script src="https://cdn.jsdelivr.net/npm/marked@2.0.0/marked.min.js"></script>
   <script>
-    // projects.mdを読み込んで表示する関数
-    async function loadMarkdown() {
-      const response = await fetch('README.md');
-      const text = await response.text();
-      document.getElementById('profile').innerHTML = marked.parse(text);
+
+    // 複数の「.md」を読み込んで表示する関数
+    async function loadMarkdownFiles(filePaths, elementIds) {
+      const markdownContents = await Promise.all(filePaths.map(async (filePath) => {
+        const response = await fetch(filePath);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${filePath}`);
+        }
+        return response.text();
+      }));
+
+      markdownContents.forEach((content, index) => {
+        document.getElementById(elementIds[index]).innerHTML = marked.parse(content);
+      });
     }
 
     // ページが読み込まれたら関数を呼び出す
-    window.onload = loadMarkdown;
+    window.onload = () => {
+      const markdownFiles = ['README.md', 'skills.md', 'projects.md', 'contact.md'];
+      const elementIds = ['profile', 'skills', 'projects', 'contact'];
+      loadMarkdownFiles(markdownFiles, elementIds)
+        .catch(error => console.error('Error loading markdown files:', error));
+    };
   </script>
   <!-- js Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

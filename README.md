@@ -1,4 +1,4 @@
-<img src="desk2.jpg" class="left">
+<img src="desk2.jpg" class="img-left">
 
 こんにちは、Kennoです。私は2025年現在、実務未経験のバックエンドエンジニアとして活動しています。
 

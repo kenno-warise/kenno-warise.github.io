@@ -2,3 +2,7 @@ body {
   font-family: "Yu Gothic", sans-serif;
 }
 
+/* 画像の横並びと回り込み */
+img .left {
+  float: left;
+}

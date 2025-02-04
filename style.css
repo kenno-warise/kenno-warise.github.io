@@ -7,6 +7,18 @@ header h1 {
   margin-bottom: 10%;
 }
 
+/* ヘッダー内の枠を画面いっぱいまで調整する */
+header .container {
+  padding-top: 20%;
+  padding-bottom: 45%;
+}
+
+/* section内の枠を画面いっぱいまで調整する */
+section .container {
+  padding-top: 20%;
+  padding-bottom: 45%;
+}
+
 /* 各セクションのh1タグの幅調整 */
 section h1 {
   margin-bottom: 10%;

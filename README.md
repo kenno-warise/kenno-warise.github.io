@@ -1,4 +1,4 @@
-<img src="desk.jpg" align="left" style="margin-right: 10px; width:30%;height:30%;">
+<img src="desk.jpg" class="right">
 こんにちは、Kennoです。私は2025年現在、実務未経験のバックエンドエンジニアとして活動しています。
 
 活動内容としては、独自開発したWebサイト（ブログサイト）の「運用・保守」、独自によるWeb開発やデータの分析をしています。

@@ -3,7 +3,9 @@ body {
 }
 
 /* 画像の横並びと回り込み */
-.img-left {
-  float: left;
-  margin-right: 10px;
+img.right {
+  float: right;
+  margin-left: 10px;
+  width: 45%;
+  height: 45%;
 }

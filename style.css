@@ -12,11 +12,15 @@ section h1 {
   margin-bottom: 10%;
 }
 
-/* マークダウンのpタグ幅の調整 */
-p.lead p {
-  margin-bottom: 3%;
+/* ヘッダーのpタグ行間の調整 */
+p.lead {
+  line-height: 200%;
 }
 
+/* マークダウンのpタグ行間の調整 */
+p.lead p {
+  line-height: 200%;
+}
 /* 画像の横並びと回り込み */
 img.right {
   float: right;

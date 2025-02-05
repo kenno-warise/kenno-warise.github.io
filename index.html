@@ -82,8 +82,8 @@
 	      <h1 class="display-6 text-center fw-bold">自己紹介 <i class="bi bi-person-lines-fill"></i></h1>
 	      <div class="lead line-height res-hei" id="profile">
 	      </div>
-	  </div>
-	</div>
+      </div>
+    </div>
       </section>
       <!-- スキル節 -->
       <!-- テキストを挿入したら「text-center」をh1タグに入れる -->
@@ -221,6 +221,18 @@
           }
         }, 200);
       });
+    });
+
+    // テキスト内のテーブル要素を全て取得し、クラスにBootstrapの要素を追加
+    const childElement = document.querySelectorAll('table');
+    childElement.forEach(element => {
+      element.classList.add("table");
+    });
+    childElement.forEach(element => {
+      element.classList.add("table-hover");
+    });
+    childElement.forEach(element => {
+      element.classList.add("table-striped");
     });
   </script>
   <!-- js Bootstrap -->

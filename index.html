@@ -15,6 +15,7 @@
 <body>
 
   <!-- Collapse -->
+  <div class="sticky-top">
   <div class="collapse bg-dark p-4" id="navbarToggleExternalContent" data-bs-theme="dark">
     <div class="container">
       <div class="row">
@@ -54,18 +55,19 @@
       </button>
     </div>
   </nav>
+  </div>
   <!-- Header -->
   <header class="py-5 text-center">
     <div class="container">
-      <div class="row py-lg-5">
+      <div class="row py-lg-5 text-bg-dark" style="--bs-bg-opacity: .5;">
 	<div class="col-lg-8 col-md-8 mx-auto">
-      <h1 class="display-6">ようこそポートフォリオサイトへ</h1>
-      <p class="lead">
-      こちらのサイトはGitHub Pagesのホスティングサービスにより提供しているWebサイトです。
-      <mark>現在は作成中</mark>のため退屈なポートフォリオとなっていますが、徐々に自己紹介文や今日までのスキル、
-      そしてこれまでに開発してきたプロジェクトのサンプルなどを掲載していく予定です。
-      </p>
-    </div>
+	  <h1 class="display-6 text-light fw-bold" style="--bs-bg-opacity: .5;">ようこそポートフォリオサイトへ</h1>
+	  <p class="lead text-light fw-medium">
+	  こちらのサイトはGitHub Pagesのホスティングサービスにより提供しているWebサイトです。
+	  現在は作成中のため退屈なポートフォリオとなっていますが、徐々に自己紹介文や今日までのスキル、
+	  そしてこれまでに開発してきたプロジェクトのサンプルなどを掲載していく予定です。
+	  </p>
+	</div>
       </div>
     </div>
   </header>
@@ -78,7 +80,7 @@
 	  <div class="row py-lg-5">
 	    <div class="col-lg-8 col-md-8 mx-auto">
 	      <h1 class="display-6 text-center">自己紹介 <i class="bi bi-person-lines-fill"></i></h1>
-	      <div class="lead line-height" id="profile">
+	      <div class="lead line-height res-hei" id="profile">
 	      </div>
 	  </div>
 	</div>
@@ -91,7 +93,7 @@
 	    <div class="col-lg-8 col-md-8 mx-auto">
 	      <h1 class="display-6">スキル <i class="bi bi-list-task"></i></h1>
 	      <i class="bi bi-cone-striped" style="color:red; font-size: 3em;"></i>
-	      <div id="skills"></div>
+	      <div class="lead line-height res-hei" id="skills"></div>
 	    </div>
 	  </div>
 	</div>
@@ -104,7 +106,7 @@
 	    <div class="col-lg-8 col-md-8 mx-auto">
 	      <h1 class="display-6" id="_projects">プロジェクト <i class="bi bi-wrench-adjustable"></i></h1>
 	      <i class="bi bi-cone-striped" style="color:red; font-size: 3em;"></i>
-	      <div id="projects"></div>
+	      <div class="lead line-height res-hei" id="projects"></div>
 	    </div>
 	  </div>
 	</div>
@@ -117,7 +119,7 @@
 	    <div class="col-lg-8 col-md-8 mx-auto">
 	      <h1 class="display-6">コンタクト <i class="bi bi-envelope"></i></h1>
 	      <i class="bi bi-cone-striped" style="color:red; font-size: 3em;"></i>
-	      <div id="contact"></div>
+	      <div class="lead line-height res-hei" id="contact"></div>
 	    </div>
 	  </div>
 	</div>
@@ -166,13 +168,13 @@
   if(window.matchMedia("(max-width:767px)").matches){
     // スマホ処理
     // sectionのpタグの行間を無くすためline-height属性を削除する
-    var sampleElement = document.getElementById('profile');
+    var sampleElement = document.getElementByClassname('res-hei');
     sampleElement.classList.remove('line-height');
     sampleElement.classList.remove('lead');
   }else if (window.matchMedia('(min-width:768px)').matches) {
     // PC処理
     // sectionのpタグの行間を空けるためline-height属性を追加する
-    var sampleElement = document.getElementById('profile');
+    var sampleElement = document.getElementByClassname('res-hei');
     sampleElement.classList.add('line-height');
     sampleElement.classList.add('lead');
   };
@@ -189,7 +191,7 @@
           if(window.matchMedia("(max-width:767px)").matches){
             //スマホ処理
             // sectionのpタグの行間を無くすためline-height属性を削除する
-            var sampleElement = document.getElementById('profile');
+            var sampleElement = document.getElementByClassname('res-hei');
             sampleElement.classList.remove('line-height');
             sampleElement.classList.remove('lead');
             // sampleElement.classList.add('container-fluid');
@@ -197,7 +199,7 @@
           }else if (window.matchMedia('(min-width:768px)').matches) {
             // PC処理
             // sectionのpタグの行間を空けるためline-height属性を追加する
-            var sampleElement = document.getElementById('profile');
+            var sampleElement = document.getElementByClassname('res-hei');
             sampleElement.classList.add('line-height');
             sampleElement.classList.add('lead');
           }

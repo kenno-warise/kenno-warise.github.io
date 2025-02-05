@@ -79,7 +79,7 @@
 	<div class="container">
 	  <div class="row py-lg-5">
 	    <div class="col-lg-8 col-md-8 mx-auto">
-	      <h1 class="display-6 text-center">自己紹介 <i class="bi bi-person-lines-fill"></i></h1>
+	      <h1 class="display-6 text-center fw-bold">自己紹介 <i class="bi bi-person-lines-fill"></i></h1>
 	      <div class="lead line-height res-hei" id="profile">
 	      </div>
 	  </div>
@@ -91,7 +91,7 @@
 	<div class="container">
 	  <div class="row py-lg-5">
 	    <div class="col-lg-8 col-md-8 mx-auto">
-	      <h1 class="display-6">スキル <i class="bi bi-list-task"></i></h1>
+	      <h1 class="display-6 fw-bold">スキル <i class="bi bi-list-task"></i></h1>
 	      <i class="bi bi-cone-striped" style="color:red; font-size: 3em;"></i>
 	      <div class="lead line-height res-hei" id="skills"></div>
 	    </div>
@@ -104,7 +104,7 @@
 	<div class="container">
 	  <div class="row py-lg-5">
 	    <div class="col-lg-8 col-md-8 mx-auto">
-	      <h1 class="display-6" id="_projects">プロジェクト <i class="bi bi-wrench-adjustable"></i></h1>
+	      <h1 class="display-6 fw-bold" id="_projects">プロジェクト <i class="bi bi-wrench-adjustable"></i></h1>
 	      <i class="bi bi-cone-striped" style="color:red; font-size: 3em;"></i>
 	      <div class="lead line-height res-hei" id="projects"></div>
 	    </div>
@@ -117,7 +117,7 @@
 	<div class="container">
 	  <div class="row py-lg-5">
 	    <div class="col-lg-8 col-md-8 mx-auto">
-	      <h1 class="display-6">コンタクト <i class="bi bi-envelope"></i></h1>
+	      <h1 class="display-6 fw-bold">コンタクト <i class="bi bi-envelope"></i></h1>
 	      <i class="bi bi-cone-striped" style="color:red; font-size: 3em;"></i>
 	      <div class="lead line-height res-hei" id="contact"></div>
 	    </div>
@@ -168,15 +168,23 @@
   if(window.matchMedia("(max-width:767px)").matches){
     // スマホ処理
     // sectionのpタグの行間を無くすためline-height属性を削除する
-    var sampleElement = document.getElementByClassname('res-hei');
-    sampleElement.classList.remove('line-height');
-    sampleElement.classList.remove('lead');
+    var sampleElement = document.getElementsByClassName('res-hei');
+    // HTMLCollectionを配列に変換するためにスプレッド演算子を使用
+    Array.from(sampleElement).forEach(function(element) {
+      element.classList.remove('lead', 'line-height');
+    });
+    // sampleElement.classList.remove('line-height');
+    //sampleElement.classList.remove('lead');
   }else if (window.matchMedia('(min-width:768px)').matches) {
     // PC処理
     // sectionのpタグの行間を空けるためline-height属性を追加する
-    var sampleElement = document.getElementByClassname('res-hei');
-    sampleElement.classList.add('line-height');
-    sampleElement.classList.add('lead');
+    var sampleElement = document.getElementsByClassName('res-hei');
+    // HTMLCollectionを配列に変換するためにスプレッド演算子を使用
+    Array.from(sampleElement).forEach(function(element) {
+      element.classList.add('lead', 'line-height');
+    });
+    // sampleElement.classList.add('line-height');
+    // sampleElement.classList.add('lead');
   };
 
     // 画面切り替えによるレスポンシブ対応
@@ -191,17 +199,25 @@
           if(window.matchMedia("(max-width:767px)").matches){
             //スマホ処理
             // sectionのpタグの行間を無くすためline-height属性を削除する
-            var sampleElement = document.getElementByClassname('res-hei');
-            sampleElement.classList.remove('line-height');
-            sampleElement.classList.remove('lead');
+            var sampleElement = document.getElementsByClassName('res-hei');
+            // HTMLCollectionを配列に変換するためにスプレッド演算子を使用
+            Array.from(sampleElement).forEach(function(element) {
+              element.classList.remove('lead', 'line-height');
+            });
+            // sampleElement.classList.remove('line-height');
+            // sampleElement.classList.remove('lead');
             // sampleElement.classList.add('container-fluid');
 
           }else if (window.matchMedia('(min-width:768px)').matches) {
             // PC処理
             // sectionのpタグの行間を空けるためline-height属性を追加する
-            var sampleElement = document.getElementByClassname('res-hei');
-            sampleElement.classList.add('line-height');
-            sampleElement.classList.add('lead');
+            var sampleElement = document.getElementsByClassName('res-hei');
+            // HTMLCollectionを配列に変換するためにスプレッド演算子を使用
+            Array.from(sampleElement).forEach(function(element) {
+              element.classList.add('lead', 'line-height');
+            });
+            // samApleElement.classList.add('line-height');
+            // sam pleElement.classList.add('lead');
           }
         }, 200);
       });

@@ -30,7 +30,7 @@ p.lead {
 }
 
 /* マークダウンのpタグ行間の調整 */
-div.lead p {
+div.line-height p {
   line-height: 200%;
 }
 /* 画像の横並びと回り込み */

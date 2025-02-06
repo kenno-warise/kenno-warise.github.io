@@ -93,25 +93,140 @@
 	    <div class="col-lg-8 col-md-8 mx-auto">
 	      <h1 class="display-6 text-center fw-bold">スキル <i class="bi bi-list-task"></i></h1>
 	      <i class="bi bi-cone-striped" style="color:red; font-size: 3em;"></i>
+	      
 	      <div class="lead line-height res-hei" id="skills">
-	      </div>
-	      <table>
-		<thead>
-		  <tr>
-		    <th>#</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <td>mark</td>
-		  </tr>
-		  <tr>
-		    <td>otto</td>
-		  </tr>
-		</tbody>
-	      </table>
+		<p>各カテゴリーはレベルの高い順で掲載しています。</p>
 
-	    </div>
+		<p>※レベルは１〜５段階（１初心者、３普通、５プロ）</P>
+
+		<table>
+		  <thead>
+		    <tr>
+		      <th>プログラミング言語</th>
+		      <th>レベル</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <th>Python</th>
+		      <th>3</th>
+		    </tr>
+		    <tr>
+		      <th>HTML</th>
+		      <th>2</th>
+		    </tr>
+		    <tr>
+		      <th>CSS</th>
+		      <th>2</th>
+		    </tr>
+		    <tr>
+		      <th>JavaScript</th>
+		      <th>1</th>
+		    </tr>
+		  </tbody>
+		</table>
+
+		<table>
+		  <thead>
+		    <tr>
+		      <th>フレームワーク</th>
+		      <th>レベル</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <th>Django</th>
+		      <th>3</th>
+		    </tr>
+		    <tr>
+		      <th>BootStrap</th>
+		      <th>2</th>
+		    </tr>
+		  </tbody>
+		</table>
+
+		<table>
+		  <thead>
+		    <tr>
+		      <th>データベース管理システム</th>
+		      <th>レベル</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <th>MySQL</th>
+		      <th>2</th>
+		    </tr>
+		    <tr>
+		      <th>SQLite3</th>
+		      <th>2</th>
+		    </tr>
+		  </tbody>
+		</table>
+
+		<table>
+		  <thead>
+		    <tr>
+		      <th>ミドルウェア</th>
+		      <th>レベル</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <th>Nginx</th>
+		      <th>1</th>
+		    </tr>
+		  </tbody>
+		</table>
+
+		<table>
+		  <thead>
+		    <tr>
+		      <th>開発ツール</th>
+		      <th>レベル</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <th>Git</th>
+		      <th>3</th>
+		    </tr>
+		    <tr>
+		      <th>CI/CD（GitHub Actionsのワークフロー）</th>
+		      <th>2</th>
+		    </tr>
+		    <tr>
+		      <th>Hatch（Pythonプロジェクトの管理）</th>
+		      <th>2</th>
+		    </tr>
+		    <tr>
+		    <tr>
+		      <th>Docker & Compose</th>
+		      <th>1</th>
+		    </tr>
+		    <tr>
+		      <th>Figma（デザイン）</th>
+		      <th>1</th>
+		    </tr>
+		  </tbody>
+		</table>
+
+		<table>
+		  <thead>
+		    <tr>
+		      <th>主な開発環境</th>
+		      <th>レベル</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <th>Linux（Ubuntu、CentOS7）</th>
+		      <th>3</th>
+		    </tr>
+		  </tbody>
+		</table>
+	      </div>
+
 	  </div>
 	</div>
       </section>
@@ -156,7 +271,6 @@
   <!-- marked.jsのCDN -->
   <script src="https://cdn.jsdelivr.net/npm/marked@2.0.0/marked.min.js"></script>
   <script>
-
     // 複数の「.md」を読み込んで表示する関数
     async function loadMarkdownFiles(filePaths, elementIds) {
       const markdownContents = await Promise.all(filePaths.map(async (filePath) => {
@@ -240,20 +354,31 @@
       });
     });
 
+    // マークダウンファイル（mdファイル）内のtableを取得したいが、何故かしゅとくできないので、
+    // 直接index.htmlにtableタグを書き込んで要素を取得して表示している。
+
     // テキスト内のテーブル要素を全て取得し、クラスにBootstrapの要素を追加
-    // const childElement = document.querySelectorAll('table');
-    const container = document.querySelector("div[id='skills']");
-    const childElement = container.querySelectorAll("table");
+    const childElement = document.querySelectorAll('table');
+    // const container = document.querySelector("#skills");
+    // const childElement = container.querySelectorAll("table");
     childElement.forEach(element => {
       element.classList.add("table");
     });
     childElement.forEach(element => {
-      element.classList.add("table-hover");
+      element.classList.add("table-light");
     });
     childElement.forEach(element => {
-      element.classList.add("table-striped");
+      element.classList.add("table-bordered");
     });
+
+    // tableブロック内のtbodyを取得し、classの属性値を追加
+    const elements = document.querySelectorAll("tbody");
+    elements.forEach(element => {
+      element.classList.add("table-group-divider");
+    });
+
   </script>
+
   <!-- js Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>

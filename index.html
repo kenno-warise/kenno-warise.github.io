@@ -277,117 +277,14 @@
   <script src="https://cdn.jsdelivr.net/npm/marked@2.0.0/marked.min.js"></script>
   <!-- レーダーチャート -->
   <script src="js/rader_chart.js" defer></script>
+  <!-- 環境に応じてベースパスを設定 -->
+  <script src="js/location_basepath.js" defer></script>
+  <!-- 複数の「.md」を読み込んで表示 -->
+  <script src="js/read_markdown_files.js" defer></script>
+  <!-- 画面切り替えによるレスポンシブ対応 -->
+  <script src="js/change_response.js" defer></script>
 
   <script>
-
-    // 環境に応じてベースパスを設定
-    let basePath;
-
-    if (window.location.pathname === '/C:/Users/warik/Documents/PYTHON/kw.github.io/index.html') {
-      basePath = '/Users/warik/Documents/PYTHON/kw.github.io/';
-    } else if (window.location.pathname === '/') {
-      basePath = '/';
-    } else {
-      basePath = '/kenno-warise.github.io/';
-    }
-
-    const headerImagePath = basePath + 'img/ai_nature.png';
-    // document.documentElement.style.setProperty('--base-url', basePath + 'img/ai_nature.png');
-    
-    document.addEventListener('DOMContentLoaded', () => {
-      // 背景画像を直接設定
-      const header = document.querySelector('header');
-      if (header) {
-	header.style.backgroundImage = `url(${headerImagePath})`;
-      }
-      // document.header.style.backgroundImage = 'url(${fullPath})';
-    });
-
-    // デバッグ用
-    console.log('Current background-image URL:', headerImagePath);
-
-    // 複数の「.md」を読み込んで表示する関数
-    async function loadMarkdownFiles(filePaths, elementIds) {
-      const markdownContents = await Promise.all(filePaths.map(async (filePath) => {
-	const response = await fetch(filePath);
-	if (!response.ok) {
-	  throw new Error(`Failed to fetch ${filePath}`);
-	}
-	return response.text();
-      }));
-
-      markdownContents.forEach((content, index) => {
-	document.getElementById(elementIds[index]).innerHTML = marked.parse(content);
-      });
-    }
-
-    // ページが読み込まれたら関数を呼び出す
-    window.onload = () => {
-      const markdownFiles = ['README.md', 'skills.md', 'projects.md', 'contact.md'];
-      const elementIds = ['profile', 'skills', 'projects', 'contact'];
-      loadMarkdownFiles(markdownFiles, elementIds)
-	.catch(error => console.error('Error loading markdown files:', error));
-    };
-
-    // 画面切り替えによるレスポンシブ対応
-    // こちらはアクセスされた際の処理
-    if(window.matchMedia("(max-width:767px)").matches){
-      // スマホ処理
-      // sectionのpタグの行間を無くすためline-height属性を削除する
-      var sampleElement = document.getElementsByClassName('res-hei');
-      // HTMLCollectionを配列に変換するためにスプレッド演算子を使用
-      Array.from(sampleElement).forEach(function(element) {
-	element.classList.remove('lead', 'line-height');
-      });
-      // sampleElement.classList.remove('line-height');
-      //sampleElement.classList.remove('lead');
-    }else if (window.matchMedia('(min-width:768px)').matches) {
-      // PC処理
-      // sectionのpタグの行間を空けるためline-height属性を追加する
-      var sampleElement = document.getElementsByClassName('res-hei');
-      // HTMLCollectionを配列に変換するためにスプレッド演算子を使用
-      Array.from(sampleElement).forEach(function(element) {
-	element.classList.add('lead', 'line-height');
-      });
-      // sampleElement.classList.add('line-height');
-      // sampleElement.classList.add('lead');
-    };
-
-    // 画面切り替えによるレスポンシブ対応
-    // こちらはリアルタイム処理
-    $(function(){
-      var timer = false;
-      $(window).resize(function() {
-	if (timer !== false) {
-	  clearTimeout(timer);
-	}
-	timer = setTimeout(function() {
-	  if(window.matchMedia("(max-width:767px)").matches){
-	    //スマホ処理
-	    // sectionのpタグの行間を無くすためline-height属性を削除する
-	    var sampleElement = document.getElementsByClassName('res-hei');
-	    // HTMLCollectionを配列に変換するためにスプレッド演算子を使用
-	    Array.from(sampleElement).forEach(function(element) {
-	      element.classList.remove('lead', 'line-height');
-	    });
-	    // sampleElement.classList.remove('line-height');
-	    // sampleElement.classList.remove('lead');
-	    // sampleElement.classList.add('container-fluid');
-
-	  }else if (window.matchMedia('(min-width:768px)').matches) {
-	    // PC処理
-	    // sectionのpタグの行間を空けるためline-height属性を追加する
-	    var sampleElement = document.getElementsByClassName('res-hei');
-	    // HTMLCollectionを配列に変換するためにスプレッド演算子を使用
-	    Array.from(sampleElement).forEach(function(element) {
-	      element.classList.add('lead', 'line-height');
-	    });
-	    // samApleElement.classList.add('line-height');
-	    // sam pleElement.classList.add('lead');
-	  }
-	}, 200);
-      });
-    });
 
     // マークダウンファイル（mdファイル）内のtableを取得したいが、何故かしゅとくできないので、
     // 直接index.htmlにtableタグを書き込んで要素を取得して表示している。
@@ -411,8 +308,6 @@
     elements.forEach(element => {
       element.classList.add("table-group-divider");
     });
-
-    // Google Charts レーダーチャート -->
 
   </script>
 

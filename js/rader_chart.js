@@ -1,23 +1,27 @@
 // レーダーチャート
 google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);
 
-full_stuck = "Web開発の自己評価"
+const front_end = "フロントエンド"
+
 const lasagna = [
-  ["バックエンド",3,full_stuck],
-  ["フロントエンド",2,full_stuck],
-  ["データベース管理",2,full_stuck],
-  ["ミドルウェア",1,full_stuck],
-  ["デプロイと運用",2,full_stuck],
-  ["セキュリティ",1,full_stuck],
+  ["HTML",2,front_end],
+  ["CSS",2,front_end],
+  ["JavaScript",1,front_end],
+  ["BootStrap",2,front_end],
+  ["Figma",1,front_end],
 ];
 
+const back_end = "バックエンド"
+
 const pork = [
-  ["Protein",0.2638,"Pulled pork in barbecue sauce"],
-  ["Carbohydrates",0.06814545454545454,"Pulled pork in barbecue sauce"],
-  ["Vitamin C",0.002666666666666667,"Pulled pork in barbecue sauce"],
-  ["Calcium",0.033846153846153845,"Pulled pork in barbecue sauce"],
-  ["Zinc",0.23125,"Pulled pork in barbecue sauce"],
-  ["Sodium",0.444,"Pulled pork in barbecue sauce"]
+  ["Python",3,back_end],
+  ["Django",3,back_end],
+  ["MySQL",2,back_end],
+  ["Nginx",1,back_end],
+  ["Nginx",1,back_end],
+  ["Git",3,back_end],
+  ["CI/CD",2,back_end],
+  ["Docker & Compose",1,back_end]
 ];
 
 // const melon = [
@@ -31,7 +35,7 @@ const pork = [
 
 function loadCharts() {
   addChart(lasagna[0][2], lasagna, "#B82E2E");
-  // addChart(pork[0][2], pork, "#6633CC");
+  addChart(pork[0][2], pork, "#6633CC");
   // addChart(melon[0][2], melon, "#109618");
 };
 
@@ -45,14 +49,14 @@ function addChart(title, data, color) {
   const options = {
     'vega': {
       "$schema": "https://vega.github.io/schema/vega/v5.json",
-      "width": 150,
+      "width": 250,
       "height": 300,
       　"title": {
 	"text": title,
 	"anchor": "middle",
 	"fontSize": 14,
 	"dy": -8,
-	"dx": {"signal": "-width / 4.5"}, // タイトルとグラフの位置関係
+	"dx": {"signal": "-width / 4"}, // タイトルとグラフの位置関係
 	// "subtitle": "RDI per 100g"
       },
       "signals": [
@@ -275,7 +279,7 @@ function addChart(title, data, color) {
   };
 
   const elem = document.createElement("div");
-  elem.setAttribute("style", "display: inline-block; width: 100%; height: 400px;"); // padding: 90px;");
+  elem.setAttribute("style", "display: inline-block; width: 300px; height: 300px;"); // padding: 90px;");
 
   const chart = new google.visualization.VegaChart(elem);
   chart.draw(dataTable, options);

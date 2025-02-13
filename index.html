@@ -228,7 +228,9 @@
 	      </div>
 
 	      <!-- レーダーチャート -->
-	      <div id="chart-area"></div>
+	      <div style="width: 100%; text-align: center;">
+		<div id="chart-area"></div>
+	      </div>
 
 	  </div>
 	</div>
@@ -283,8 +285,12 @@
   <script src="js/read_markdown_files.js" defer></script>
   <!-- 画面切り替えによるレスポンシブ対応 -->
   <script src="js/change_response.js" defer></script>
-
+  <!-- Vaga Rader Chart -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <script>
+
 
     // マークダウンファイル（mdファイル）内のtableを取得したいが、何故かしゅとくできないので、
     // 直接index.htmlにtableタグを書き込んで要素を取得して表示している。

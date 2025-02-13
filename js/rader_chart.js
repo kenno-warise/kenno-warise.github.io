@@ -1,5 +1,3 @@
-// レーダーチャート
-
 google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);
 
 const front_end = "フロントエンド"
@@ -7,31 +5,31 @@ const lasagna = [
   ["HTML",2,front_end],
   ["CSS",2,front_end],
   ["JavaScript",1,front_end],
-  ["BootStrap",2,front_end],
-  ["Figma",1,front_end],
+  ["jQuery",1,front_end],
+  ["Bootstrap",2,front_end],
   ["Figma",1,front_end],
 ];
 
-// const pork = [
-//   ["Protein",0.2638,"Pulled pork in barbecue sauce"],
-//   ["Carbohydrates",0.06814545454545454,"Pulled pork in barbecue sauce"],
-//   ["Vitamin C",0.002666666666666667,"Pulled pork in barbecue sauce"],
-//   ["Calcium",0.033846153846153845,"Pulled pork in barbecue sauce"],
-//   ["Zinc",0.23125,"Pulled pork in barbecue sauce"],
-//   ["Sodium",0.444,"Pulled pork in barbecue sauce"]
-// ];
-// 
-// const melon = [
-//   ["Protein",0.0168,"Melons, cantaloupe, raw"],
-//   ["Carbohydrates",0.029672727272727274,"Melons, cantaloupe, raw"],
-//   ["Vitamin C",0.4893333333333334,"Melons, cantaloupe, raw"],
-//   ["Calcium",0.006923076923076923,"Melons, cantaloupe, raw"],
-//   ["Zinc",0.0225,"Melons, cantaloupe, raw"],
-//   ["Sodium",0.010666666666666666,"Melons, cantaloupe, raw"]
-// ];
+const pork = [
+  ["Protein",0.2638,"Pulled pork in barbecue sauce"],
+  ["Carbohydrates",0.06814545454545454,"Pulled pork in barbecue sauce"],
+  ["Vitamin C",0.002666666666666667,"Pulled pork in barbecue sauce"],
+  ["Calcium",0.033846153846153845,"Pulled pork in barbecue sauce"],
+  ["Zinc",0.23125,"Pulled pork in barbecue sauce"],
+  ["Sodium",0.444,"Pulled pork in barbecue sauce"]
+];
+
+const melon = [
+  ["Protein",0.0168,"Melons, cantaloupe, raw"],
+  ["Carbohydrates",0.029672727272727274,"Melons, cantaloupe, raw"],
+  ["Vitamin C",0.4893333333333334,"Melons, cantaloupe, raw"],
+  ["Calcium",0.006923076923076923,"Melons, cantaloupe, raw"],
+  ["Zinc",0.0225,"Melons, cantaloupe, raw"],
+  ["Sodium",0.010666666666666666,"Melons, cantaloupe, raw"]
+];
 
 function loadCharts() {
-  addChart(lasagna[0][2], lasagna, "#B82E2E"); // (タイトル、データ、カラー）
+  addChart(lasagna[0][2], lasagna, "#B82E2E");
   // addChart(pork[0][2], pork, "#6633CC");
   // addChart(melon[0][2], melon, "#109618");
 };
@@ -46,19 +44,26 @@ function addChart(title, data, color) {
   const options = {
     'vega': {
       "$schema": "https://vega.github.io/schema/vega/v5.json",
-      "width": 250,
-      "height": 300,
-      "autosize": "none",
+      "width": 400, // 幅のサイズ !!
+      "height": 400, // 高さのサイズ !!
+      "padding": 50, // !!
+      // "autosize": "none", // 改変前
+      "autosize": {
+	"type": "none",
+	"contains": "padding",
+      },
       "title": {
 	"text": title,
 	"anchor": "middle",
-	"fontSize": 14,
+	// "fontSize": 14, // 改変前
+	"fontSize": 14, // !!
 	"dy": -8,
-	"dx": {"signal": "-width/4"},
-	// "subtitle": "RDI per 100g" // サブタイトル
+	"dx": {"signal": "-width/5.5"}, // タイトルの軸？ !!
+	"subtitle": ""
       },
       "signals": [
-	{"name": "radius", "update": "90"}
+	// {"name": "radius", "update": "90"} // 改変前
+	{"name": "radius", "update": "width / 2"} // !!
       ],
       "data": [
 	{
@@ -90,13 +95,14 @@ function addChart(title, data, color) {
 	  "range": {"signal": "[0, radius]"},
 	  "zero": true,
 	  "nice": false,
-	  // "domain": [0,0.5], // 改変前
-	  "domain": [0,5],
+	  // "domain": [0,0.5], 改変前
+	  "domain": [0,5], // レーダー内側の線の数
 	}
       ],
       "encode": {
 	"enter": {
-	  "x": {"signal": "width/2"},
+	  // "x": {"signal": "width/2"}, // 改変前
+	  "x": {"signal": "width/2"}, // width/2でグラフが左右均等になった。 !!
 	  "y": {"signal": "height/2 + 20"}
 	}
       },
@@ -119,9 +125,9 @@ function addChart(title, data, color) {
 		  "x": {"signal": "scale('radial', datum.value) * cos(scale('angular', datum.key))"},
 		  "y": {"signal": "scale('radial', datum.value) * sin(scale('angular', datum.key))"},
 		  "stroke": {"value": color},
-		  "strokeWidth": {"value": 1.5},
+		  "strokeWidth": {"value": 2}, // レーダー枠線の太さ
 		  "fill": {"value": color},
-		  "fillOpacity": {"value": 0.1}
+		  "fillOpacity": {"value": 0.1} // 透明度
 		}
 	      }
 	    },
@@ -134,12 +140,13 @@ function addChart(title, data, color) {
 		  "x": {"signal": "datum.x + 14 * cos(scale('angular', datum.datum.key))"},
 		  "y": {"signal": "datum.y + 14 * sin(scale('angular', datum.datum.key))"},
 		  // "text": {"signal": "format(datum.datum.value,'.1%')"}, // 改変前
-		  "text": {"signal": "format(datum.datum.value,'1')"},
+		  "text": {"signal": "format(datum.datum.value,'1')"}, // メモリの単位
 		  "opacity": {"signal": "datum.datum.value > 0.01 ? 1 : 0"},
 		  "align": {"value": "center"},
 		  "baseline": {"value": "middle"},
 		  "fontWeight": {"value": "bold"},
 		  "fill": {"value": color},
+		  "fontSize": {"value": 14}, // レーダーのメモリサイズ !! 
 		}
 	      }
 	    }
@@ -199,7 +206,7 @@ function addChart(title, data, color) {
 		}
 	      ],
 	      "fill": {"value": "black"},
-	      "fontSize": {"value": 12}
+	      "fontSize": {"value": 14} // レーダー外枠のテキストサイズ !!
 	    }
 	  }
 	},
@@ -278,11 +285,11 @@ function addChart(title, data, color) {
   };
 
   const elem = document.createElement("div");
-  elem.setAttribute("style", "display: inline-block; width: 250px; height: 300px; padding: 20px;");
+  // elem.setAttribute("style", "display: inline-block; width: 250px; height: 300px; padding: 20px;"); // 改変前
+  elem.setAttribute("style", "display: inline-block; width: 100%; height: 350px; font-size: initial;");
 
   const chart = new google.visualization.VegaChart(elem);
   chart.draw(dataTable, options);
 
   document.getElementById("chart-area").appendChild(elem);
 }
-

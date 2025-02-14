@@ -1,7 +1,8 @@
 google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);
 
 const front_end = "フロントエンド"
-const lasagna = [
+const front = [
+  ["Git",3,front_end],
   ["HTML",2,front_end],
   ["CSS",2,front_end],
   ["JavaScript",1,front_end],
@@ -10,31 +11,33 @@ const lasagna = [
   ["Figma",1,front_end],
 ];
 
-const pork = [
-  ["Protein",0.2638,"Pulled pork in barbecue sauce"],
-  ["Carbohydrates",0.06814545454545454,"Pulled pork in barbecue sauce"],
-  ["Vitamin C",0.002666666666666667,"Pulled pork in barbecue sauce"],
-  ["Calcium",0.033846153846153845,"Pulled pork in barbecue sauce"],
-  ["Zinc",0.23125,"Pulled pork in barbecue sauce"],
-  ["Sodium",0.444,"Pulled pork in barbecue sauce"]
+const back_end = "バックエンド"
+const back = [
+  ["Django",3,back_end],
+  ["Git",3,back_end],
+  ["Python",3,back_end],
+  ["CI/CD",2,back_end],
+  ["MySQL",2,back_end],
 ];
 
-const melon = [
-  ["Protein",0.0168,"Melons, cantaloupe, raw"],
-  ["Carbohydrates",0.029672727272727274,"Melons, cantaloupe, raw"],
-  ["Vitamin C",0.4893333333333334,"Melons, cantaloupe, raw"],
-  ["Calcium",0.006923076923076923,"Melons, cantaloupe, raw"],
-  ["Zinc",0.0225,"Melons, cantaloupe, raw"],
-  ["Sodium",0.010666666666666666,"Melons, cantaloupe, raw"]
+const infrastructure = "インフラ"
+const infra = [
+  ["VPS",1,infrastructure],
+  ["Docker & Compose",1,infrastructure],
+  ["CI/CD",1,infrastructure],
+  ["Nginx",1,infrastructure],
+  ["Network",1,infrastructure],
+  ["監視",1,infrastructure],
+  ["自動化",1,infrastructure],
 ];
 
 function loadCharts() {
-  addChart(lasagna[0][2], lasagna, "#B82E2E");
-  // addChart(pork[0][2], pork, "#6633CC");
-  // addChart(melon[0][2], melon, "#109618");
+  addChart(front[0][2], front, "#B82E2E", "front-end-area");
+  addChart(back[0][2], back, "#6633CC", "back-end-area");
+  addChart(infra[0][2], infra, "#109618", "infra-area");
 };
 
-function addChart(title, data, color) {
+function addChart(title, data, color, elementId) {
   const dataTable = new google.visualization.DataTable();
   dataTable.addColumn({type: 'string', 'id': 'key'});
   dataTable.addColumn({type: 'number', 'id': 'value'});
@@ -58,7 +61,7 @@ function addChart(title, data, color) {
 	// "fontSize": 14, // 改変前
 	"fontSize": 14, // !!
 	"dy": -8,
-	"dx": {"signal": "-width/5.5"}, // タイトルの軸？ !!
+	"dx": {"signal": "-width/4.5"}, // タイトルの軸？ !!
 	"subtitle": ""
       },
       "signals": [
@@ -286,10 +289,13 @@ function addChart(title, data, color) {
 
   const elem = document.createElement("div");
   // elem.setAttribute("style", "display: inline-block; width: 250px; height: 300px; padding: 20px;"); // 改変前
-  elem.setAttribute("style", "display: inline-block; width: 100%; height: 350px; font-size: initial;");
-
+  elem.setAttribute("style", "margin-top: 20%; margin-bottom: 20%; display: inline-block; width: 100%; height: 350px; font-size: initial;");
+  console.log('2行目', elem);
+  console.log('休憩')
   const chart = new google.visualization.VegaChart(elem);
   chart.draw(dataTable, options);
 
-  document.getElementById("chart-area").appendChild(elem);
+  document.getElementById(elementId).appendChild(elem);
+  
+  // 今のところfor文で回すか否か
 }

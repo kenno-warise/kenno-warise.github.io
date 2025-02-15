@@ -271,7 +271,6 @@ function addChart(title, data, color, elementId, width) {
   container.appendChild(elem);
 }
 
-width = 400;
 
 // 画面切り替えによるレスポンシブ対応
 // こちらはアクセスされた際の処理
@@ -309,8 +308,8 @@ const infra = [
   ["CI/CD",2,infrastructure],
   ["Nginx",1,infrastructure],
   ["監視",1,infrastructure],
+  ["シェルスクリプト",1,infrastructure],
   ["Network",0,infrastructure],
-  ["自動化",0,infrastructure],
 ];
 
 // 画面サイズに応じてaddChart関数を呼び出す

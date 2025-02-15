@@ -97,6 +97,7 @@
 		<p>各カテゴリーはレベルの高い順で掲載しています。</p>
 
 		<p>※レベルは１〜５段階（１初心者、３普通、５プロ）</P>
+	      </div>
 
 	      <!-- レーダーチャート -->
 	      <div style="width: 100%; text-align: center;">
@@ -143,7 +144,6 @@
 		    </tr>
 		  </tbody>
 		</table>
-	      </div>
 
 	      <div style="width: 100%; text-align: center;">
 		<div id="back-end-area"></div>
@@ -193,7 +193,8 @@
 
 	      <div style="width: 100%; text-align: center;">
 		<div id="infra-area"></div>
-		<br>
+	      </div>
+	      <div>
 		<table>
 		  <thead>
 		    <tr>
@@ -209,14 +210,14 @@
 		      <th>2</th>
 		    </tr>
 		    <tr>
-		      <th>Docker & Compose</th>
-		      <th>コンテナ技術</th>
-		      <th>1</th>
-		    </tr>
-		    <tr>
 		      <th>CI/CD</th>
 		      <th>テスト＆デプロイ自動化ツール</th>
 		      <th>2</th>
+		    </tr>
+		    <tr>
+		      <th>Docker & Compose</th>
+		      <th>コンテナ技術</th>
+		      <th>1</th>
 		    </tr>
 		    <tr>
 		      <th>Nginx</th>
@@ -224,14 +225,14 @@
 		      <th>1</th>
 		    </tr>
 		    <tr>
-		      <th>ネットワーク構築&トラブルシューティング</th>
-		      <th>ネットワーク</th>
-		      <th>0</th>
-		    </tr>
-		    <tr>
 		      <th>監視</th>
 		      <th>監視ツール</th>
 		      <th>1</th>
+		    </tr>
+		    <tr>
+		      <th>ネットワーク構築&トラブルシューティング</th>
+		      <th>ネットワーク</th>
+		      <th>0</th>
 		    </tr>
 		    <tr>
 		      <th>インフラ自動化</th>
@@ -313,16 +314,16 @@
       element.classList.add("table");
     });
     childElement.forEach(element => {
-      element.classList.add("table-light");
+      element.classList.add("table-sm");
     });
-    childElement.forEach(element => {
-      element.classList.add("table-bordered");
-    });
+    // childElement.forEach(element => {
+    //   element.classList.add("table-bordered");
+    // });
 
     // tableブロック内のtbodyを取得し、classの属性値を追加
-    const elements = document.querySelectorAll("tbody");
+    const elements = document.querySelectorAll("thead");
     elements.forEach(element => {
-      element.classList.add("table-group-divider");
+      element.classList.add("table-dark");
     });
 
   </script>

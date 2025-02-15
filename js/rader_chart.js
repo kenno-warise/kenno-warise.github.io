@@ -1,3 +1,4 @@
+
 // レーダーチャートの関数
 function addChart(title, data, color, elementId, width) {
 
@@ -6,12 +7,8 @@ function addChart(title, data, color, elementId, width) {
     const childDivs = container.querySelectorAll(':scope > div'); // 直下の<div>タグを選択
 
       childDivs.forEach(div => {
-	container.removeChild(div);
+        container.removeChild(div);
       });
-    // 既存の要素があれば子要素を削除
-    // while (container.firstChild) {
-    //   container.removeChild(container.firstChild);
-    // }
   } else {
     console.error(`Element with id '${elementId}' not found.`);
   }
@@ -274,6 +271,7 @@ function addChart(title, data, color, elementId, width) {
   container.appendChild(elem);
 }
 
+width = 400;
 
 // 画面切り替えによるレスポンシブ対応
 // こちらはアクセスされた際の処理
@@ -306,13 +304,13 @@ const back = [
 
 const infrastructure = "インフラ"
 const infra = [
-  ["VPS",1,infrastructure],
-  ["Docker & Compose",1,infrastructure],
-  ["CI/CD",1,infrastructure],
+  ["VPS",2,infrastructure],
+  ["Docker & Compose",2,infrastructure],
+  ["CI/CD",2,infrastructure],
   ["Nginx",1,infrastructure],
-  ["Network",1,infrastructure],
   ["監視",1,infrastructure],
-  ["自動化",1,infrastructure],
+  ["Network",0,infrastructure],
+  ["自動化",0,infrastructure],
 ];
 
 // 画面サイズに応じてaddChart関数を呼び出す

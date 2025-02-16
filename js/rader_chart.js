@@ -330,7 +330,7 @@ const back = [
 
 const infrastructure = "インフラストラクチャー"
 const infra = [
-  ["VPS",2,infrastructure],
+  ["Linux",2,infrastructure],
   ["Docker & Compose",2,infrastructure],
   ["監視と管理",1,infrastructure],
   ["シェルスクリプト",1,infrastructure],

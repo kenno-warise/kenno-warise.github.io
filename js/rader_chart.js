@@ -277,9 +277,24 @@ function addChart(title, data, color, elementId, width) {
 if(window.matchMedia("(max-width:767px)").matches){
   // スマホ処理
   width = 300; //スマホ用の幅
+  
+  // フォントサイズの設定
+  var tables = document.getElementsByTagName('table');
+
+  for (var i = 0; i < tables.length; i++) {
+    tables[i].style.fontSize = '10px';
+  }
+
 }else if (window.matchMedia('(min-width:768px)').matches) {
   // PC処理
   width = 400; // PC用の幅
+
+  // フォントサイズの設定
+  var tables = document.getElementsByTagName('table');
+
+  for (var i = 0; i < tables.length; i++) {
+    tables[i].style.fontSize = '';
+  }
 };
 
 const front_end = "フロントエンド"
@@ -299,17 +314,16 @@ const back = [
   ["Python",3,back_end],
   ["CI/CD",2,back_end],
   ["MySQL",2,back_end],
+  ["Nginx",1,back_end],
 ];
 
 const infrastructure = "インフラ"
 const infra = [
   ["VPS",2,infrastructure],
   ["Docker & Compose",2,infrastructure],
-  ["CI/CD",2,infrastructure],
-  ["Nginx",1,infrastructure],
-  ["監視",1,infrastructure],
+  ["監視と管理",1,infrastructure],
   ["シェルスクリプト",1,infrastructure],
-  ["Network",0,infrastructure],
+  ["ファイアフォール",0,infrastructure],
 ];
 
 // 画面サイズに応じてaddChart関数を呼び出す
@@ -333,9 +347,23 @@ $(function(){
       if(window.matchMedia("(max-width:767px)").matches){
 	//スマホ処理
 	width = 300; // スマホ用の幅
+
+	// フォントサイズの設定
+	var tables = document.getElementsByTagName('table');
+
+	for (var i = 0; i < tables.length; i++) {
+	  tables[i].style.fontSize = '10px';
+	}
       } else if (window.matchMedia('(min-width:768px)').matches) {
 	// PC処理
 	width = 400; // PC用の幅
+
+	// フォントサイズの設定
+	var tables = document.getElementsByTagName('table');
+
+	for (var i = 0; i < tables.length; i++) {
+	  tables[i].style.fontSize = '';
+	}
       }
 
       // 画面サイズに応じてaddChart関数を呼び出す

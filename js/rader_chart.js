@@ -263,7 +263,7 @@ function addChart(title, data, color, elementId, width, padding) {
 
   const elem = document.createElement("div");
   // elem.setAttribute("style", "display: inline-block; width: 250px; height: 300px; padding: 20px;"); // 改変前
-  elem.setAttribute("style", "display: inline-block; width: 100%; font-size: initial;");
+  elem.setAttribute("style", "display: inline-block; width: 100%; height: 350px; font-size: initial;");  // ここのheightを350pxにすることでグラフとテーブルの差が縮まる
   const chart = new google.visualization.VegaChart(elem);
   chart.draw(dataTable, options);
 

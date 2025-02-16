@@ -1,6 +1,6 @@
 
 // レーダーチャートの関数
-function addChart(title, data, color, elementId, width) {
+function addChart(title, data, color, elementId, width, padding) {
 
   const container = document.getElementById(elementId);
   if (container) {
@@ -22,8 +22,8 @@ function addChart(title, data, color, elementId, width) {
     'vega': {
       "$schema": "https://vega.github.io/schema/vega/v5.json",
       "width": width, // 幅のサイズ !!
-      "height": 400, // 高さのサイズ !!
-      "padding": 50, // !!
+      "height": 450, // タイトルからグラフ下部までの高さのサイズ !!
+      "padding": padding, // !!
       // "autosize": "none", // 改変前
       "autosize": {
 	"type": "none",
@@ -33,10 +33,10 @@ function addChart(title, data, color, elementId, width) {
 	"text": title,
 	"anchor": "middle",
 	// "fontSize": 14, // 改変前
-	"fontSize": 20, // !!
+	"fontSize": 14, // !!
 	"dy": -8,
 	"dx": {"signal": "-width/4.5"}, // タイトルの軸？ !!
-	"subtitle": ""
+	"subtitle": "",
       },
       "signals": [
 	// {"name": "radius", "update": "90"} // 改変前
@@ -261,10 +261,9 @@ function addChart(title, data, color, elementId, width) {
     }
   };
 
-
   const elem = document.createElement("div");
   // elem.setAttribute("style", "display: inline-block; width: 250px; height: 300px; padding: 20px;"); // 改変前
-  elem.setAttribute("style", "margin-top: 20%; margin-bottom: 20%; display: inline-block; width: 100%; height: 350px; font-size: initial;");
+  elem.setAttribute("style", "display: inline-block; width: 100%; font-size: initial;");
   const chart = new google.visualization.VegaChart(elem);
   chart.draw(dataTable, options);
 
@@ -276,24 +275,36 @@ function addChart(title, data, color, elementId, width) {
 // こちらはアクセスされた際の処理
 if(window.matchMedia("(max-width:767px)").matches){
   // スマホ処理
-  width = 300; //スマホ用の幅
   
+  // グラフの設定
+  width = 300; //スマホ用の幅
+  padding = 80;
+  
+  // グラフ下のテーブルの設定
   // フォントサイズの設定
   var tables = document.getElementsByTagName('table');
 
   for (var i = 0; i < tables.length; i++) {
     tables[i].style.fontSize = '10px';
+    tables[i].style.marginTop = '5%';
+    tables[i].style.marginBottom = '0%';
   }
 
 }else if (window.matchMedia('(min-width:768px)').matches) {
   // PC処理
+  
+  // グラフの設定
   width = 400; // PC用の幅
+  padding = 60;
 
+  // グラフ下のテーブルの設定
   // フォントサイズの設定
   var tables = document.getElementsByTagName('table');
 
   for (var i = 0; i < tables.length; i++) {
     tables[i].style.fontSize = '';
+    tables[i].style.marginTop = '20%';
+    tables[i].style.marginBottom = '15%';
   }
 };
 
@@ -317,7 +328,7 @@ const back = [
   ["Nginx",1,back_end],
 ];
 
-const infrastructure = "インフラ"
+const infrastructure = "インフラストラクチャー"
 const infra = [
   ["VPS",2,infrastructure],
   ["Docker & Compose",2,infrastructure],
@@ -328,9 +339,9 @@ const infra = [
 
 // 画面サイズに応じてaddChart関数を呼び出す
 function loadCharts() {
-  addChart(front[0][2], front, "#B82E2E", "front-end-area", width);
-  addChart(back[0][2], back, "#6633CC", "back-end-area", width);
-  addChart(infra[0][2], infra, "#109618", "infra-area", width);
+  addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding);
+  addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding);
+  addChart(infra[0][2], infra, "#109618", "infra-area", width, padding);
 }
 
 google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);
@@ -346,31 +357,43 @@ $(function(){
       let width;
       if(window.matchMedia("(max-width:767px)").matches){
 	//スマホ処理
+  
+        // グラフの設定
 	width = 300; // スマホ用の幅
+	padding = 80;
 
+	// グラフ下のテーブルの設定
 	// フォントサイズの設定
 	var tables = document.getElementsByTagName('table');
 
 	for (var i = 0; i < tables.length; i++) {
 	  tables[i].style.fontSize = '10px';
+          tables[i].style.marginTop = '5%';
+          tables[i].style.marginBottom = '0%';
 	}
       } else if (window.matchMedia('(min-width:768px)').matches) {
 	// PC処理
+  
+        // グラフの設定
 	width = 400; // PC用の幅
+	padding = 60;
 
+	// グラフ下のテーブルの設定
 	// フォントサイズの設定
 	var tables = document.getElementsByTagName('table');
 
 	for (var i = 0; i < tables.length; i++) {
 	  tables[i].style.fontSize = '';
+          tables[i].style.marginTop = '20%';
+          tables[i].style.marginBottom = '15%';
 	}
       }
 
       // 画面サイズに応じてaddChart関数を呼び出す
       function loadCharts() {
-	addChart(front[0][2], front, "#B82E2E", "front-end-area", width);
-	addChart(back[0][2], back, "#6633CC", "back-end-area", width);
-	addChart(infra[0][2], infra, "#109618", "infra-area", width);
+	addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding);
+	addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding);
+	addChart(infra[0][2], infra, "#109618", "infra-area", width, padding);
       }
 
       google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);

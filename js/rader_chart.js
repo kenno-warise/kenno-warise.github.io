@@ -22,7 +22,7 @@ function addChart(title, data, color, elementId, width, padding) {
     'vega': {
       "$schema": "https://vega.github.io/schema/vega/v5.json",
       "width": width, // 幅のサイズ !!
-      "height": 450, // タイトルからグラフ下部までの高さのサイズ !!
+      "height": 480, // タイトルからグラフ下部までの高さのサイズ !!
       "padding": padding, // !!
       // "autosize": "none", // 改変前
       "autosize": {
@@ -31,16 +31,17 @@ function addChart(title, data, color, elementId, width, padding) {
       },
       "title": {
 	"text": title,
+	"color": color,
+	"offset": 50, // タイトルの高さ調整
 	"anchor": "middle",
-	// "fontSize": 14, // 改変前
-	"fontSize": 14, // !!
+	"fontSize": 18, // !!
 	"dy": -8,
 	"dx": {"signal": "-width/4.5"}, // タイトルの軸？ !!
 	"subtitle": "",
       },
       "signals": [
 	// {"name": "radius", "update": "90"} // 改変前
-	{"name": "radius", "update": "width / 2"} // !!
+	{"name": "radius", "update": "width / 2"}, // !!
       ],
       "data": [
 	{
@@ -256,7 +257,7 @@ function addChart(title, data, color, elementId, width, padding) {
 	      "strokeWidth": {"value": 1}
 	    }
 	  }
-	}
+	},
       ]
     }
   };
@@ -303,8 +304,8 @@ if(window.matchMedia("(max-width:767px)").matches){
 
   for (var i = 0; i < tables.length; i++) {
     tables[i].style.fontSize = '';
-    tables[i].style.marginTop = '20%';
-    tables[i].style.marginBottom = '15%';
+    tables[i].style.marginTop = '25%';
+    tables[i].style.marginBottom = '25%';
   }
 };
 
@@ -384,8 +385,8 @@ $(function(){
 
 	for (var i = 0; i < tables.length; i++) {
 	  tables[i].style.fontSize = '';
-          tables[i].style.marginTop = '20%';
-          tables[i].style.marginBottom = '15%';
+          tables[i].style.marginTop = '25%';
+          tables[i].style.marginBottom = '25%';
 	}
       }
 

@@ -61,7 +61,7 @@
     <div class="container">
       <div class="row py-lg-5 text-bg-dark" style="--bs-bg-opacity: .5;">
 	<div class="col-lg-8 col-md-8 mx-auto">
-	  <h1 class="display-6 text-light fw-bold" style="--bs-bg-opacity: .5;">ようこそポートフォリオサイトへ</h1>
+	  <h1 class="display-6 text-light fw-bold" style="--bs-bg-opacity: .5; padding-top: 5%;">ようこそポートフォリオサイトへ</h1>
 	  <p class="lead text-light fw-medium">
 	  こちらのサイトはGitHub Pagesのホスティングサービスにより提供しているWebサイトです。
 	  現在は作成中のため退屈なポートフォリオとなっていますが、徐々に自己紹介文や今日までのスキル、
@@ -76,164 +76,179 @@
     <main>
       <!-- プロフィール節 -->
       <section class="py-5 bg-light" id="_profile">
-	<div class="container">
+	<div class="container-lg">
 	  <div class="row py-lg-5">
-	    <div class="col-lg-8 col-md-8 mx-auto">
+	    <div class="col-lg-12 col-md-12 mx-auto">
 	      <h1 class="display-6 text-center fw-bold">自己紹介 <i class="bi bi-person-lines-fill"></i></h1>
 	      <div class="lead line-height res-hei" id="profile">
 	      </div>
-      </div>
-    </div>
+	    </div>
+	  </div>
       </section>
       <!-- スキル節 -->
       <!-- テキストを挿入したら「text-center」をh1タグに入れる -->
       <section class="py-5" id="_skills">
-	<div class="container">
+	<div class="container-lg">
 	  <div class="row py-lg-5">
-	    <div class="col-lg-8 col-md-8 mx-auto">
+	    <div class="col-lg-12 col-md-12 mx-auto">
 	      <h1 class="display-6 text-center fw-bold">スキル <i class="bi bi-list-task"></i></h1>
-	      
+
 	      <div class="lead line-height res-hei" id="skills">
 	      </div>
 
 	      <!-- レーダーチャート -->
-	      <div style="width: 100%; text-align: center;">
-		<div id="front-end-area"></div>
-	      </div>
-	      <div style="text-align: left;">
-		<table>
-		  <thead>
-		    <tr>
-		      <th>名前</th>
-		      <th>カテゴリー</th>
-		      <th>レベル</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th>HTML</th>
-		      <th>マークアップ言語</th>
-		      <th>2</th>
-		    </tr>
-		    <tr>
-		      <th>CSS</th>
-		      <th>マークアップ言語</th>
-		      <th>2</th>
-		    </tr>
-		    <tr>
-		      <th>BootStrap</th>
-		      <th>フレームワーク</th>
-		      <th>2</th>
-		    </tr>
-		    <tr>
-		      <th>Figma</th>
-		      <th>デザインツール</th>
-		      <th>1</th>
-		    </tr>
-		    <tr>
-		      <th>JavaScript</th>
-		      <th>プログラミング言語</th>
-		      <th>1</th>
-		    </tr>
-		    <tr>
-		      <th>jQuery</th>
-		      <th>JSライブラリ</th>
-		      <th>1</th>
-		    </tr>
-		  </tbody>
-		</table>
+	      <div class="web-dev">
+		  <h4 class="text-center fw-bold">Web開発のスキルセット</h4>
+	      <div class="row">
+		<div class="col-md-4">
+		  <div style="width: 100%; text-align: center;">
+		    <div id="front-end-area"></div>
+		  </div>
+		  <div style="text-align: left;">
+		    <table>
+		      <thead>
+			<tr>
+			  <th>名前</th>
+			  <th>カテゴリー</th>
+			  <th>レベル</th>
+			</tr>
+		      </thead>
+		      <tbody>
+			<tr>
+			  <th>HTML</th>
+			  <th>マークアップ言語</th>
+			  <th>2</th>
+			</tr>
+			<tr>
+			  <th>CSS</th>
+			  <th>マークアップ言語</th>
+			  <th>2</th>
+			</tr>
+			<tr>
+			  <th>BootStrap</th>
+			  <th>フレームワーク</th>
+			  <th>2</th>
+			</tr>
+			<tr>
+			  <th>Figma</th>
+			  <th>デザインツール</th>
+			  <th>1</th>
+			</tr>
+			<tr>
+			  <th>JavaScript</th>
+			  <th>プログラミング言語</th>
+			  <th>1</th>
+			</tr>
+			<tr>
+			  <th>jQuery</th>
+			  <th>JSライブラリ</th>
+			  <th>1</th>
+			</tr>
+		      </tbody>
+		    </table>
+		  </div>
+		</div>
 
-	      <div style="width: 100%; text-align: center;">
-		<div id="back-end-area"></div>
-	      </div>
-	      <div style="text-align: left;">
-		<table>
-		  <thead>
-		    <tr>
-		      <th>名前</th>
-		      <th>カテゴリー</th>
-		      <th>レベル</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th>Django</th>
-		      <th>フレームワーク</th>
-		      <th>3</th>
-		    </tr>
-		    <tr>
-		      <th>Git</th>
-		      <th>バージョン管理ツール</th>
-		      <th>3</th>
-		    </tr>
-		    <tr>
-		      <th>Python</th>
-		      <th>プログラミング言語</th>
-		      <th>3</th>
-		    </tr>
-		    <tr>
-		      <th>CI/CD</th>
-		      <th>テスト＆デプロイ自動化ツール</th>
-		      <th>3</th>
-		    </tr>
-		    <tr>
-		      <th>MySQL</th>
-		      <th>データベース管理システム</th>
-		      <th>2</th>
-		    </tr>
-		    <tr>
-		      <th>Nginx</th>
-		      <th>Webサーバー</th>
-		      <th>1</th>
-		    </tr>
-		  </tbody>
-		</table>
-	      </div>
+		<!-- バックエンド -->
+		<div class="col-md-4">
+		  <div style="width: 100%; text-align: center;">
+		    <div id="back-end-area"></div>
+		  </div>
+		  <div style="text-align: left;">
+		    <table>
+		      <thead>
+			<tr>
+			  <th>名前</th>
+			  <th>カテゴリー</th>
+			  <th>レベル</th>
+			</tr>
+		      </thead>
+		      <tbody>
+			<tr>
+			  <th>Django</th>
+			  <th>フレームワーク</th>
+			  <th>3</th>
+			</tr>
+			<tr>
+			  <th>Git</th>
+			  <th>バージョン管理ツール</th>
+			  <th>3</th>
+			</tr>
+			<tr>
+			  <th>Python</th>
+			  <th>プログラミング言語</th>
+			  <th>3</th>
+			</tr>
+			<tr>
+			  <th>CI/CD</th>
+			  <th>テスト＆デプロイ自動化ツール</th>
+			  <th>3</th>
+			</tr>
+			<tr>
+			  <th>MySQL</th>
+			  <th>データベース管理システム</th>
+			  <th>2</th>
+			</tr>
+			<tr>
+			  <th>Nginx</th>
+			  <th>Webサーバー</th>
+			  <th>1</th>
+			</tr>
+		      </tbody>
+		    </table>
+		  </div>
+		</div>
 
-	      <div style="width: 100%; text-align: center;">
-		<div id="infra-area"></div>
-	      </div>
-	      <div style="text-align: left;">
-		<table>
-		  <thead>
-		    <tr>
-		      <th>名前</th>
-		      <th>カテゴリー</th>
-		      <th>レベル</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th>Linux</th>
-		      <th>OS（環境）</th>
-		      <th>2</th>
-		    </tr>
-		    <tr>
-		      <th>Docker & Compose</th>
-		      <th>コンテナの構築</th>
-		      <th>1</th>
-		    </tr>
-		    <tr>
-		      <th>監視と管理</th>
-		      <th>ネットワーク構築</th>
-		      <th>1</th>
-		    </tr>
-		    <tr>
-		      <th>シェルスクリプト</th>
-		      <th>スクリプト言語</th>
-		      <th>1</th>
-		    </tr>
-		    <tr>
-		      <th>ファイアフォール</th>
-		      <th>ネットワーク構築</th>
-		      <th>0</th>
-		    </tr>
-		  </tbody>
-		</table>
-	      </div>
+		<!-- インフラ -->
+		<div class="col-md-4">
+		  <div style="width: 100%; text-align: center;">
+		    <div id="infra-area"></div>
+		  </div>
+		  <div style="text-align: left;">
+		    <table>
+		      <thead>
+			<tr>
+			  <th>名前</th>
+			  <th>カテゴリー</th>
+			  <th>レベル</th>
+			</tr>
+		      </thead>
+		      <tbody>
+			<tr>
+			  <th>Linux</th>
+			  <th>OS（環境）</th>
+			  <th>2</th>
+			</tr>
+			<tr>
+			  <th>Docker & Compose</th>
+			  <th>コンテナの構築</th>
+			  <th>1</th>
+			</tr>
+			<tr>
+			  <th>監視と管理</th>
+			  <th>ネットワーク構築</th>
+			  <th>1</th>
+			</tr>
+			<tr>
+			  <th>シェルスクリプト</th>
+			  <th>スクリプト言語</th>
+			  <th>1</th>
+			</tr>
+			<tr>
+			  <th>ファイアフォール</th>
+			  <th>ネットワーク構築</th>
+			  <th>0</th>
+			</tr>
+		      </tbody>
+		    </table>
+		  </div>
+		</div>
 
+	      </div><!-- row end -->
+	      </div><!-- class="web-dev" -->
+
+	    </div>
 	  </div>
-	</div>
       </section>
       <!-- プロジェクト節 -->
       <!-- テキストを挿入したら「text-center」をh1タグに入れる -->

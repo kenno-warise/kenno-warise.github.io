@@ -47,6 +47,8 @@ section h1 {
 }
 
 
+/* 自己紹介節 start */
+
 /* マークダウンのpタグ行間の調整 */
 div.line-height p {
   line-height: 200%;
@@ -58,3 +60,13 @@ img.right {
   width: 45%;
   height: 45%;
 }
+
+/* 自己紹介節 end */
+
+/* スキル節 start */
+
+div.web-dev {
+  margin-top: 20%;
+}
+
+/* スキル節 end */

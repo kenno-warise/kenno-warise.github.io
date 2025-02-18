@@ -1,14 +1,14 @@
 
 // レーダーチャートの関数
-function addChart(title, data, color, elementId, width, padding) {
+function addChart(title, data, color, elementId, width, padding, title_fontsize, line_fontsize) {
 
   const container = document.getElementById(elementId);
   if (container) {
     const childDivs = container.querySelectorAll(':scope > div'); // 直下の<div>タグを選択
 
-      childDivs.forEach(div => {
-        container.removeChild(div);
-      });
+    childDivs.forEach(div => {
+      container.removeChild(div);
+    });
   } else {
     console.error(`Element with id '${elementId}' not found.`);
   }
@@ -22,7 +22,7 @@ function addChart(title, data, color, elementId, width, padding) {
     'vega': {
       "$schema": "https://vega.github.io/schema/vega/v5.json",
       "width": width, // 幅のサイズ !!
-      "height": 480, // タイトルからグラフ下部までの高さのサイズ !!
+      "height": 450, // タイトルからグラフ下部までの高さのサイズ !!
       "padding": padding, // !!
       // "autosize": "none", // 改変前
       "autosize": {
@@ -34,7 +34,7 @@ function addChart(title, data, color, elementId, width, padding) {
 	"color": color,
 	"offset": 50, // タイトルの高さ調整
 	"anchor": "middle",
-	"fontSize": 18, // !!
+	"fontSize": title_fontsize, // !!
 	"dy": -8,
 	"dx": {"signal": "-width/4.5"}, // タイトルの軸？ !!
 	"subtitle": "",
@@ -184,7 +184,7 @@ function addChart(title, data, color, elementId, width, padding) {
 		}
 	      ],
 	      "fill": {"value": "black"},
-	      "fontSize": {"value": 14} // レーダー外枠のテキストサイズ !!
+	      "fontSize": {"value": line_fontsize} // レーダー外枠のテキストサイズ !!
 	    }
 	  }
 	},
@@ -264,7 +264,7 @@ function addChart(title, data, color, elementId, width, padding) {
 
   const elem = document.createElement("div");
   // elem.setAttribute("style", "display: inline-block; width: 250px; height: 300px; padding: 20px;"); // 改変前
-  elem.setAttribute("style", "display: inline-block; width: 100%; height: 350px; font-size: initial;");  // ここのheightを350pxにすることでグラフとテーブルの差が縮まる
+  elem.setAttribute("style", "display: inline-block; width: 100%; height: 380px; font-size: initial;");  // ここのheightを350pxにすることでグラフとテーブルの差が縮まる
   const chart = new google.visualization.VegaChart(elem);
   chart.draw(dataTable, options);
 
@@ -276,34 +276,38 @@ function addChart(title, data, color, elementId, width, padding) {
 // こちらはアクセスされた際の処理
 if(window.matchMedia("(max-width:767px)").matches){
   // スマホ処理
-  
+
   // グラフの設定
-  width = 300; //スマホ用の幅
-  padding = 80;
-  
+  width = 350; //スマホ用の幅
+  padding = 50;
+  title_fontsize = 14;
+  line_fontsize = 12;
+
   // グラフ下のテーブルの設定
   // フォントサイズの設定
   var tables = document.getElementsByTagName('table');
 
   for (var i = 0; i < tables.length; i++) {
     tables[i].style.fontSize = '10px';
-    tables[i].style.marginTop = '5%';
-    tables[i].style.marginBottom = '0%';
+    tables[i].style.marginTop = '10%';
+    tables[i].style.marginBottom = '10%';
   }
 
 }else if (window.matchMedia('(min-width:768px)').matches) {
   // PC処理
-  
+
   // グラフの設定
-  width = 400; // PC用の幅
-  padding = 60;
+  width = 230; // PC用の幅
+  padding = 40;
+  title_fontsize = 14;
+  line_fontsize = 12;
 
   // グラフ下のテーブルの設定
   // フォントサイズの設定
   var tables = document.getElementsByTagName('table');
 
   for (var i = 0; i < tables.length; i++) {
-    tables[i].style.fontSize = '';
+    tables[i].style.fontSize = '12px';
     tables[i].style.marginTop = '25%';
     tables[i].style.marginBottom = '25%';
   }
@@ -340,9 +344,9 @@ const infra = [
 
 // 画面サイズに応じてaddChart関数を呼び出す
 function loadCharts() {
-  addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding);
-  addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding);
-  addChart(infra[0][2], infra, "#109618", "infra-area", width, padding);
+  addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding, title_fontsize, line_fontsize);
+  addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding, title_fontsize, line_fontsize);
+  addChart(infra[0][2], infra, "#109618", "infra-area", width, padding, title_fontsize, line_fontsize);
 }
 
 google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);
@@ -358,10 +362,12 @@ $(function(){
       let width;
       if(window.matchMedia("(max-width:767px)").matches){
 	//スマホ処理
-  
-        // グラフの設定
-	width = 300; // スマホ用の幅
-	padding = 80;
+
+	// グラフの設定
+	width = 350; //スマホ用の幅
+	padding = 50;
+	title_fontsize = 14;
+	line_fontsize = 12;
 
 	// グラフ下のテーブルの設定
 	// フォントサイズの設定
@@ -369,36 +375,39 @@ $(function(){
 
 	for (var i = 0; i < tables.length; i++) {
 	  tables[i].style.fontSize = '10px';
-          tables[i].style.marginTop = '5%';
-          tables[i].style.marginBottom = '0%';
+	  tables[i].style.marginTop = '10%';
+	  tables[i].style.marginBottom = '10%';
 	}
+
       } else if (window.matchMedia('(min-width:768px)').matches) {
 	// PC処理
-  
-        // グラフの設定
-	width = 400; // PC用の幅
-	padding = 60;
+
+	// グラフの設定
+	width = 230; // PC用の幅
+	padding = 40;
+	title_fontsize = 14;
+	line_fontsize = 12;
 
 	// グラフ下のテーブルの設定
 	// フォントサイズの設定
 	var tables = document.getElementsByTagName('table');
 
 	for (var i = 0; i < tables.length; i++) {
-	  tables[i].style.fontSize = '';
-          tables[i].style.marginTop = '25%';
-          tables[i].style.marginBottom = '25%';
+	  tables[i].style.fontSize = '12px';
+	  tables[i].style.marginTop = '25%';
+	  tables[i].style.marginBottom = '25%';
 	}
-      }
+      };
 
       // 画面サイズに応じてaddChart関数を呼び出す
       function loadCharts() {
-	addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding);
-	addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding);
-	addChart(infra[0][2], infra, "#109618", "infra-area", width, padding);
+	addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding, title_fontsize, line_fontsize);
+	addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding, title_fontsize, line_fontsize);
+	addChart(infra[0][2], infra, "#109618", "infra-area", width, padding, title_fontsize, line_fontsize);
       }
 
       google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);
-    
+
     }, 200);
   });
 });

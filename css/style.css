@@ -65,6 +65,14 @@ img.right {
 
 /* スキル節 start */
 
+/* 画像の横並びと回り込み */
+img.left {
+  float: left;
+  margin-right: 10px;
+  width: 45%;
+  height: 45%;
+}
+
 div.web-dev {
   margin-top: 10%;
 }

@@ -298,7 +298,7 @@ if(window.matchMedia("(max-width:767px)").matches){
 
   // グラフの設定
   width = 230; // PC用の幅
-  padding = 40;
+  padding = 45;
   title_fontsize = 14;
   line_fontsize = 12;
 
@@ -320,33 +320,32 @@ const front = [
   ["JavaScript",1,front_end],
   ["jQuery",1,front_end],
   ["Bootstrap",2,front_end],
-  ["Figma",1,front_end],
 ];
 
 const back_end = "バックエンド"
 const back = [
   ["Django",3,back_end],
-  ["Git",3,back_end],
   ["Python",3,back_end],
-  ["CI/CD",2,back_end],
+  ["Linux",2,back_end],
   ["MySQL",2,back_end],
+  ["Firefall",1,back_end],
   ["Nginx",1,back_end],
 ];
 
-const infrastructure = "インフラストラクチャー"
-const infra = [
-  ["Linux",2,infrastructure],
-  ["Docker & Compose",2,infrastructure],
-  ["監視と管理",1,infrastructure],
-  ["シェルスクリプト",1,infrastructure],
-  ["ファイアフォール",0,infrastructure],
+const dev_tool = "開発ツール"
+const dev = [
+  ["Git",3,dev_tool],
+  ["GitHub Actions",2,dev_tool],
+  ["Docker",2,dev_tool],
+  ["Figma",1,dev_tool],
+  ["ShellScript",1,dev_tool],
 ];
 
 // 画面サイズに応じてaddChart関数を呼び出す
 function loadCharts() {
   addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding, title_fontsize, line_fontsize);
   addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding, title_fontsize, line_fontsize);
-  addChart(infra[0][2], infra, "#109618", "infra-area", width, padding, title_fontsize, line_fontsize);
+  addChart(dev[0][2], dev, "#109618", "infra-area", width, padding, title_fontsize, line_fontsize);
 }
 
 google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);
@@ -384,7 +383,7 @@ $(function(){
 
 	// グラフの設定
 	width = 230; // PC用の幅
-	padding = 40;
+	padding = 45;
 	title_fontsize = 14;
 	line_fontsize = 12;
 

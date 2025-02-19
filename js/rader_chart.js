@@ -32,7 +32,7 @@ function addChart(title, data, color, elementId, width, padding, title_fontsize,
       "title": {
 	"text": title,
 	"color": color,
-	"offset": 50, // タイトルの高さ調整
+	"offset": 30, // タイトルの高さ調整
 	"anchor": "middle",
 	"fontSize": title_fontsize, // !!
 	"dy": -8,
@@ -290,7 +290,7 @@ if(window.matchMedia("(max-width:767px)").matches){
   for (var i = 0; i < tables.length; i++) {
     tables[i].style.fontSize = '10px';
     tables[i].style.marginTop = '10%';
-    tables[i].style.marginBottom = '10%';
+    tables[i].style.marginBottom = '5%';
   }
 
 }else if (window.matchMedia('(min-width:768px)').matches) {
@@ -308,8 +308,8 @@ if(window.matchMedia("(max-width:767px)").matches){
 
   for (var i = 0; i < tables.length; i++) {
     tables[i].style.fontSize = '12px';
-    tables[i].style.marginTop = '25%';
-    tables[i].style.marginBottom = '25%';
+    tables[i].style.marginTop = '0%';
+    tables[i].style.marginBottom = '5%';
   }
 };
 
@@ -345,7 +345,7 @@ const dev = [
 function loadCharts() {
   addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding, title_fontsize, line_fontsize);
   addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding, title_fontsize, line_fontsize);
-  addChart(dev[0][2], dev, "#109618", "infra-area", width, padding, title_fontsize, line_fontsize);
+  addChart(dev[0][2], dev, "#109618", "dev-tool-area", width, padding, title_fontsize, line_fontsize);
 }
 
 google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);
@@ -375,7 +375,7 @@ $(function(){
 	for (var i = 0; i < tables.length; i++) {
 	  tables[i].style.fontSize = '10px';
 	  tables[i].style.marginTop = '10%';
-	  tables[i].style.marginBottom = '10%';
+	  tables[i].style.marginBottom = '5%';
 	}
 
       } else if (window.matchMedia('(min-width:768px)').matches) {
@@ -393,8 +393,8 @@ $(function(){
 
 	for (var i = 0; i < tables.length; i++) {
 	  tables[i].style.fontSize = '12px';
-	  tables[i].style.marginTop = '25%';
-	  tables[i].style.marginBottom = '25%';
+	  tables[i].style.marginTop = '0%';
+	  tables[i].style.marginBottom = '5%';
 	}
       };
 
@@ -402,7 +402,7 @@ $(function(){
       function loadCharts() {
 	addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding, title_fontsize, line_fontsize);
 	addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding, title_fontsize, line_fontsize);
-	addChart(infra[0][2], infra, "#109618", "infra-area", width, padding, title_fontsize, line_fontsize);
+	addChart(dev[0][2], dev, "#109618", "dev-tool-area", width, padding, title_fontsize, line_fontsize);
       }
 
       google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);

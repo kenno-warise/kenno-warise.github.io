@@ -99,12 +99,20 @@
 	      <div id="_dev_skills"></div>
 	      <!-- レーダーチャート -->
 	      <div class="web-dev">
-		<div class="text-center">
-		  <h4 class="fw-bold">Web開発のスキルセット</h4>
+		<div>
+		  <h4 class="fw-bold text-center">Web開発のスキルセット</h4>
+		  <p class="fw-medium">
+		  Web開発のスキルセットではフロントエンド、バックエンド、開発ツールの３つのグループに分けて表しました。
+		  本来インフラというグループも存在しますがホスティングサービスであるIaaSを利用してきたので、ある程度の
+		  サーバー側の作業はバックエンドのグループに入れました。</p>
 
-		  <p>各カテゴリーはレベルの高い順で掲載しています。</p>
+		  <p class="fw-medium">各スキルセットの詳細情報はこちらのリンクです。</p>
+		  <ul>
+		    <li><a href="#front-end-area">フロントエンド</a></li>
+		    <li><a href="#back-end-area">バックエンド</a></li>
+		    <li><a href="#dev-tool-area">開発ツール</a></li>
+		  </ul>
 
-		  <p>※レベルは１〜５段階（１初心者、３普通、５プロ）</p>
 		</div>
 		<div class="row">
 		  <div class="col-md-4">
@@ -112,7 +120,8 @@
 		      <div id="front-end-area"></div>
 		    </div>
 		    <div style="text-align: left;">
-		      <table>
+		      <table class="table table-sm caption-top">
+			<caption style="color: white; background-color: #B82E2E; opacity: 0.3;">※レベルは１〜５段階（１初心者、３普通、５プロ）</caption>
 			<thead>
 			  <tr>
 			    <th>名前</th>
@@ -149,15 +158,24 @@
 			</tbody>
 		      </table>
 		    </div>
+		    <!-- Table end -->
+		    <!-- Card -->
+		    <div class="card mb-3">
+		      <div class="card-body">
+			<h5 class="card-title">title</h5>
+			<p class="card-text">準備中...</p>
+		      </div>
+		    </div>
+		    <!-- Card end -->
 		  </div>
-
 		  <!-- バックエンド -->
 		  <div class="col-md-4">
 		    <div style="width: 100%; text-align: center;">
 		      <div id="back-end-area"></div>
 		    </div>
 		    <div style="text-align: left;">
-		      <table>
+		      <table class="table table-sm caption-top">
+			<caption style="color: white; background-color: #6633CC; opacity: 0.3;">※レベルは１〜５段階（１初心者、３普通、５プロ）</caption>
 			<thead>
 			  <tr>
 			    <th>名前</th>
@@ -199,15 +217,25 @@
 			</tbody>
 		      </table>
 		    </div>
+		    <!-- Table end -->
+		    <!-- Card -->
+		    <div class="card mb-3">
+		      <div class="card-body">
+			<h5 class="card-title">title</h5>
+			<p class="card-text">準備中...</p>
+		      </div>
+		    </div>
+		    <!-- Card end -->
 		  </div>
 
 		  <!-- 開発ツール -->
 		  <div class="col-md-4">
 		    <div style="width: 100%; text-align: center;">
-		      <div id="infra-area"></div>
+		      <div id="dev-tool-area"></div>
 		    </div>
 		    <div style="text-align: left;">
-		      <table>
+		      <table class="table table-sm caption-top">
+			<caption style="color: white; background-color: #109618; opacity: 0.3;">※レベルは１〜５段階（１初心者、３普通、５プロ）</caption>
 			<thead>
 			  <tr>
 			    <th>名前</th>
@@ -244,6 +272,15 @@
 			</tbody>
 		      </table>
 		    </div>
+		    <!-- Table end -->
+		    <!-- Card -->
+		    <div class="card mb-3">
+		      <div class="card-body">
+			<h5 class="card-title">title</h5>
+			<p class="card-text">準備中...</p>
+		      </div>
+		    </div>
+		    <!-- Card end -->
 		  </div>
 
 		</div><!-- row end -->
@@ -308,29 +345,26 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <script>
 
-
     // マークダウンファイル（mdファイル）内のtableを取得したいが、何故かしゅとくできないので、
     // 直接index.htmlにtableタグを書き込んで要素を取得して表示している。
 
     // テキスト内のテーブル要素を全て取得し、クラスにBootstrapの要素を追加
-    const childElement = document.querySelectorAll('table');
-    // const container = document.querySelector("#skills");
-    // const childElement = container.querySelectorAll("table");
-    childElement.forEach(element => {
-      element.classList.add("table");
-    });
-    childElement.forEach(element => {
-      element.classList.add("table-sm");
-    });
+    // const childElement = document.querySelectorAll('table');
+    // childElement.forEach(element => {
+    //   element.classList.add("table");
+    // });
+    // childElement.forEach(element => {
+    //   element.classList.add("table-sm");
+    // });
     // childElement.forEach(element => {
     //   element.classList.add("table-bordered");
     // });
 
     // tableブロック内のtbodyを取得し、classの属性値を追加
-    const elements = document.querySelectorAll("thead");
-    elements.forEach(element => {
-      element.classList.add("table-dark");
-    });
+    // const elements = document.querySelectorAll("thead");
+    // elements.forEach(element => {
+    //   element.classList.add("table-dark");
+    // });
 
   </script>
 

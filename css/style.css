@@ -1,3 +1,8 @@
+/* BootStrap カスタムColor */
+.table-purple {
+  background-color: #6633CC;
+}
+
 body {
   font-family: "Yu Gothic", sans-serif;
 }

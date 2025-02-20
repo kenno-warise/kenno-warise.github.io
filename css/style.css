@@ -82,4 +82,12 @@ div.web-dev {
   margin-top: 10%;
 }
 
+.card {
+  border: none;
+}
+
+.card-body {
+  padding-left: 0% !important;
+  padding-right: 0% !important;
+}
 /* スキル節 end */

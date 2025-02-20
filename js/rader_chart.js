@@ -274,12 +274,12 @@ function addChart(title, data, color, elementId, width, padding, title_fontsize,
 
 // 画面切り替えによるレスポンシブ対応
 // こちらはアクセスされた際の処理
-if(window.matchMedia("(max-width:767px)").matches){
+if(window.matchMedia("(max-width:575px)").matches){
   // スマホ処理
 
   // グラフの設定
   width = 350; //スマホ用の幅
-  padding = 50;
+  padding = 90;
   title_fontsize = 14;
   line_fontsize = 12;
 
@@ -289,11 +289,26 @@ if(window.matchMedia("(max-width:767px)").matches){
 
   for (var i = 0; i < tables.length; i++) {
     tables[i].style.fontSize = '10px';
-    tables[i].style.marginTop = '10%';
-    tables[i].style.marginBottom = '5%';
+    // tables[i].style.marginTop = '10%';
+    // tables[i].style.marginBottom = '5%';
   }
 
-}else if (window.matchMedia('(min-width:768px)').matches) {
+  // smallタグのフォントサイズ設定
+  // すべてのcardクラスを持つ要素を取得
+  var cards = document.querySelectorAll('.card');
+  
+  // 各カード要素をループ処理
+  cards.forEach(card => {
+    // カード内のsmallタグを取得
+    const smallTag = card.querySelector('small');
+
+    // スタイルを変更
+    if (smallTag) {
+      smallTag.style.fontSize = '10px';
+    }
+  });
+
+}else if (window.matchMedia('(min-width:576px)').matches) {
   // PC処理
 
   // グラフの設定
@@ -308,18 +323,33 @@ if(window.matchMedia("(max-width:767px)").matches){
 
   for (var i = 0; i < tables.length; i++) {
     tables[i].style.fontSize = '12px';
-    tables[i].style.marginTop = '0%';
-    tables[i].style.marginBottom = '5%';
+    // tables[i].style.marginTop = '0%';
+    // tables[i].style.marginBottom = '5%';
   }
+
+  // smallタグのフォントサイズ設定
+  // すべてのcardクラスを持つ要素を取得
+  var cards = document.querySelectorAll('.card');
+  
+  // 各カード要素をループ処理
+  cards.forEach(card => {
+    // カード内のsmallタグを取得
+    const smallTag = card.querySelector('small');
+
+    // スタイルを変更
+    if (smallTag) {
+      smallTag.style.fontSize = '12px';
+    }
+  });
 };
 
 const front_end = "フロントエンド"
 const front = [
-  ["HTML",2,front_end],
-  ["CSS",2,front_end],
-  ["JavaScript",1,front_end],
-  ["jQuery",1,front_end],
   ["Bootstrap",2,front_end],
+  ["CSS",2,front_end],
+  ["HTML",2,front_end],
+  ["JavaScript",2,front_end],
+  ["jQuery",1,front_end],
 ];
 
 const back_end = "バックエンド"
@@ -334,11 +364,11 @@ const back = [
 
 const dev_tool = "開発ツール"
 const dev = [
-  ["Git",3,dev_tool],
+  ["Git/GitHub",3,dev_tool],
   ["GitHub Actions",2,dev_tool],
-  ["Docker",2,dev_tool],
+  ["Docker",1,dev_tool],
   ["Figma",1,dev_tool],
-  ["ShellScript",1,dev_tool],
+  ["Shell Script",1,dev_tool],
 ];
 
 // 画面サイズに応じてaddChart関数を呼び出す
@@ -359,12 +389,12 @@ $(function(){
     }
     timer = setTimeout(function() {
       let width;
-      if(window.matchMedia("(max-width:767px)").matches){
+      if(window.matchMedia("(max-width:575px)").matches){
 	//スマホ処理
 
 	// グラフの設定
 	width = 350; //スマホ用の幅
-	padding = 50;
+	padding =90;
 	title_fontsize = 14;
 	line_fontsize = 12;
 
@@ -374,11 +404,26 @@ $(function(){
 
 	for (var i = 0; i < tables.length; i++) {
 	  tables[i].style.fontSize = '10px';
-	  tables[i].style.marginTop = '10%';
-	  tables[i].style.marginBottom = '5%';
+	  // tables[i].style.marginTop = '10%';
+	  // tables[i].style.marginBottom = '5%';
 	}
 
-      } else if (window.matchMedia('(min-width:768px)').matches) {
+	// smallタグのフォントサイズ設定
+	// すべてのcardクラスを持つ要素を取得
+	var cards = document.querySelectorAll('.card');
+
+	// 各カード要素をループ処理
+	cards.forEach(card => {
+	  // カード内のsmallタグを取得
+	  const smallTag = card.querySelector('small');
+
+	  // スタイルを変更
+	  if (smallTag) {
+	    smallTag.style.fontSize = '10px';
+	  }
+	});
+
+      } else if (window.matchMedia('(min-width:576px)').matches) {
 	// PC処理
 
 	// グラフの設定
@@ -393,9 +438,25 @@ $(function(){
 
 	for (var i = 0; i < tables.length; i++) {
 	  tables[i].style.fontSize = '12px';
-	  tables[i].style.marginTop = '0%';
-	  tables[i].style.marginBottom = '5%';
+	  // tables[i].style.marginTop = '0%';
+	  // tables[i].style.marginBottom = '5%';
 	}
+
+	// smallタグのフォントサイズ設定
+	// すべてのcardクラスを持つ要素を取得
+	var cards = document.querySelectorAll('.card');
+
+	// 各カード要素をループ処理
+	cards.forEach(card => {
+	  // カード内のsmallタグを取得
+	  const smallTag = card.querySelector('small');
+
+	  // スタイルを変更
+	  if (smallTag) {
+	    smallTag.style.fontSize = '12px';
+	  }
+	});
+
       };
 
       // 画面サイズに応じてaddChart関数を呼び出す

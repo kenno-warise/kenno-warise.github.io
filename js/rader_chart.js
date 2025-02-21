@@ -345,9 +345,9 @@ if(window.matchMedia("(max-width:575px)").matches){
 
 const front_end = "フロントエンド"
 const front = [
-  ["Bootstrap",2,front_end],
-  ["CSS",2,front_end],
-  ["HTML",2,front_end],
+  ["Bootstrap",3,front_end],
+  ["CSS",3,front_end],
+  ["HTML",3,front_end],
   ["JavaScript",2,front_end],
   ["jQuery",1,front_end],
 ];
@@ -355,8 +355,8 @@ const front = [
 const back_end = "バックエンド"
 const back = [
   ["Django",3,back_end],
+  ["Linux",3,back_end],
   ["Python",3,back_end],
-  ["Linux",2,back_end],
   ["MySQL",2,back_end],
   ["Firefall",1,back_end],
   ["Nginx",1,back_end],
@@ -365,7 +365,9 @@ const back = [
 const dev_tool = "開発ツール"
 const dev = [
   ["Git/GitHub",3,dev_tool],
-  ["GitHub Actions",2,dev_tool],
+  ["Vim",3,dev_tool],
+  ["Copilot",2,dev_tool],
+  ["GH Actions",2,dev_tool],
   ["Docker",1,dev_tool],
   ["Figma",1,dev_tool],
   ["Shell Script",1,dev_tool],

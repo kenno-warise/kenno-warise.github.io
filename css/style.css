@@ -1,11 +1,9 @@
-/* BootStrap カスタムColor */
-.table-purple {
-  background-color: #6633CC;
-}
 
 body {
   font-family: "Yu Gothic", sans-serif;
 }
+
+/* 見出しのデザイン */
 
 /* headerのh1タグの幅調整 */
 header h1 {
@@ -40,11 +38,13 @@ p.lead {
   line-height: 200%;
 }
 
+/* 見出しのデザイン  end */
+
 /* section内の枠を画面いっぱいまで調整する */
-section .container {
+/*section .container {
   padding-top: 20%;
   padding-bottom: 45%;
-}
+}*/
 
 /* 各セクションのh1タグの幅調整 */
 section h1 {
@@ -55,9 +55,10 @@ section h1 {
 /* 自己紹介節 start */
 
 /* マークダウンのpタグ行間の調整 */
-div.line-height p {
+#_profile div.line-height {
   line-height: 200%;
 }
+
 /* 画像の横並びと回り込み */
 img.right {
   float: right;
@@ -70,6 +71,12 @@ img.right {
 
 /* スキル節 start */
 
+
+/* マークダウンのpタグ行間の調整 */
+#_skills div.line-height {
+  line-height: 200%;
+}
+
 /* 画像の横並びと回り込み */
 img.left {
   float: left;
@@ -80,6 +87,10 @@ img.left {
 
 div.web-dev {
   margin-top: 10%;
+}
+
+div.web-dev p {
+  line-height: 200%;
 }
 
 .card {

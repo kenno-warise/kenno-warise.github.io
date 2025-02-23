@@ -76,244 +76,250 @@
     <main>
       <!-- プロフィール節 -->
       <section class="py-5 bg-light" id="_profile">
-	<div class="container-lg">
+	<div class="container">
 	  <div class="row py-lg-5">
 	    <div class="col-lg-12 col-md-12 mx-auto">
 	      <h1 class="display-6 text-center fw-bold">自己紹介 <i class="bi bi-person-lines-fill"></i></h1>
-	      <div class="lead line-height res-hei" id="profile">
+	      <!-- div class="lead line-height res-hei" id="profile"-->
+	      <div class="line-height" id="profile">
 	      </div>
 	    </div>
 	  </div>
       </section>
       <!-- スキル節 -->
-	<!-- テキストを挿入したら「text-center」をh1タグに入れる -->
-	<section class="py-5" id="_skills">
-	  <div class="container-lg">
-	    <div class="row py-lg-5">
-	      <div class="col-lg-12 col-md-12 mx-auto">
-		<h1 class="display-6 text-center fw-bold">スキル <i class="bi bi-list-task"></i></h1>
+      <!-- テキストを挿入したら「text-center」をh1タグに入れる -->
+      <section class="py-5" id="_skills">
+	<div class="container">
+	  <div class="row py-lg-5">
+	    <div class="col-lg-12 col-md-12 mx-auto">
+	      <h1 class="display-6 text-center fw-bold">スキル <i class="bi bi-list-task"></i></h1>
 
-		<div class="lead line-height res-hei" id="skills">
+	      <div class="line-height" id="skills">
+	      </div>
+	      <!-- リンク用のブロックタグ -->
+	      <div id="_dev_skills"></div>
+	      <div class="web-dev">
+		<!-- Web開発節 -->
+		<div>
+		  <h4 class="text-center fw-bold">Web開発のスキルセット</h4>
+		  <p class="fw-medium">
+		  Web開発のスキルセットではフロントエンド、バックエンド、開発ツールの３つのグループに分けて表しました。
+		  本来インフラというグループも存在しますがホスティングサービスであるIaaSを利用してきたので、ある程度の
+		  サーバー側の作業はバックエンドのグループに入れました。</p>
+
+		  <p class="fw-medium">各スキルセットの詳細情報はこちらのリンクです。</p>
+		  <ul>
+		    <li><a href="#front-end-area">フロントエンド</a></li>
+		    <li><a href="#back-end-area">バックエンド</a></li>
+		    <li><a href="#dev-tool-area">開発ツール</a></li>
+		  </ul>
 		</div>
-		<!-- リンク用のブロックタグ -->
-		<div id="_dev_skills"></div>
-		<div class="web-dev">
-		  <!-- Web開発節 -->
-		  <div>
-		    <h4 class="fw-bold text-center">Web開発のスキルセット</h4>
-		    <p class="fw-medium">
-		    Web開発のスキルセットではフロントエンド、バックエンド、開発ツールの３つのグループに分けて表しました。
-		    本来インフラというグループも存在しますがホスティングサービスであるIaaSを利用してきたので、ある程度の
-		    サーバー側の作業はバックエンドのグループに入れました。</p>
-
-		    <p class="fw-medium">各スキルセットの詳細情報はこちらのリンクです。</p>
-		    <ul>
-		      <li><a href="#front-end-area">フロントエンド</a></li>
-		      <li><a href="#back-end-area">バックエンド</a></li>
-		      <li><a href="#dev-tool-area">開発ツール</a></li>
-		    </ul>
-		  </div>
-
-		  <!-- レーダーチャート -->
-		  <div class="card-group"><!-- card-group start -->
-		    <div class="card"><!-- Card rader and table -->
-		      <div style="width: 100%; text-align: center;">
-			<div id="front-end-area"></div>
-		      </div>
-		      <div class="card-body" style="text-align: left;">
-			<table class="table table-sm caption-top">
-			  <caption>※レベルは１〜５段階（１初心者、３普通、５プロ）</caption>
-			  <thead style="--bs-table-color: white; --bs-table-bg: #B82E2E; opacity: 0.8;">
-			    <tr>
-			      <th>名前</th>
-			      <th>カテゴリー</th>
-			      <th>レベル</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    </tr>
-			      <th>BootStrap</th>
-			      <th>フレームワーク</th>
-			      <th>3</th>
-			    </tr>
-			    <tr>
-			      <th>CSS</th>
-			      <th>マークアップ言語</th>
-			      <th>3</th>
-			    </tr>
-			    <tr>
-			    <tr>
-			      <th>HTML</th>
-			      <th>マークアップ言語</th>
-			      <th>3</th>
-			    <tr>
-			      <th>JavaScript</th>
-			      <th>プログラミング言語</th>
-			      <th>2</th>
-			    </tr>
-			    <tr>
-			      <th>jQuery</th>
-			      <th>JSライブラリ</th>
-			      <th>1</th>
-			    </tr>
-			  </tbody>
-			</table>
-			<small>
-			  <mark>BootStrap:</mark><br>
-			  <mark>CSS:</mark><br>
-			  <mark>HTML:</mark>SEO対策として各ブロックに相応しいタグの配置、
-			  見やすいコードを心掛けるなど。<br>
-			  <mark>JavaScript:</mark>レスポンシブに各タグの値を変更する処理、
-			  チャートライブラリやマークダウンライブラリの利用など。<br>
-			  <mark>jQuery:</mark>非同期処理で使った程度。<br>
-			  <mark>目標 課題:</mark>
-			</small>
-		      </div><!-- card-body end -->
-		    </div><!-- Card end -->
-
-		    <!-- バックエンド -->
-		    <div class="card"><!-- Card rader and table -->
-		      <div style="width: 100%; text-align: center;">
-			<div id="back-end-area"></div>
-		      </div>
-		      <div class="card-body" style="text-align: left;">
-			<table class="table table-sm caption-top">
-			  <caption>※レベルは１〜５段階（１初心者、３普通、５プロ）</caption>
-			  <thead style="--bs-table-color: white; --bs-table-bg: #6633CC; opacity: 0.8;">
-			    <tr>
-			      <th>名前</th>
-			      <th>カテゴリー</th>
-			      <th>レベル</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th>Django</th>
-			      <th>フレームワーク</th>
-			      <th>3</th>
-			    </tr>
-			    <tr>
-			      <th>Linux</th>
-			      <th>OS（環境）</th>
-			      <th>3</th>
-			    </tr>
-			    <tr>
-			      <th>Python</th>
-			      <th>プログラミング言語</th>
-			      <th>3</th>
-			    </tr>
-			    <tr>
-			      <th>MySQL</th>
-			      <th>データベース管理</th>
-			      <th>2</th>
-			    </tr>
-			    <tr>
-			      <th>Firefall</th>
-			      <th>セキュリティ</th>
-			      <th>1</th>
-			    </tr>
-			    <tr>
-			      <th>Nginx</th>
-			      <th>Webサーバー</th>
-			      <th>1</th>
-			    </tr>
-			  </tbody>
-			</table>
-			<small>
-			  <mark>Django:</mark>CRUD（Create、Read、Update、Delete）操作、
-			  メールサーバ－の設定、アプリケーションログの監視、データの暗号化と復号化、
-			  ユーザーのアクセス管理、メディアファイル（画像や表形式等）の管理、
-			  再利用可能なアプリ化、ユニットテスト<br>
-			  <mark>Firefall:</mark>ホスティングサービスの初期設定で一度構築。<br>
-			  <mark>Linux:</mark>sshでホスティングサービスの環境に出入りしたり、ファイルの転送、
-		    　    bashrcで環境変数の設定、crontabでスケジュール管理など。<br>
-		          <mark>MySQL:</mark>Djangoで<kbd>python manage.py dbshell</kbd>を実行すると、
-		          プロジェクトで接続しているデータベースに入って操作する事ができ、極々簡単なクエリの操作程度。<br>
-		          <mark>Nginx:</mark>SSL証明書（Let's Encrypt）の設定<br>
-			  <mark>Python:</mark>ユニットテストとロギング。<br>
-			  <mark>目標 課題:</mark>目標はチームでの開発。
-			  まだまだDjangoには豊富な機能が盛りだくさんなので覚えたい。
-			  NginxやFirefallの設定は動画教材のやり方をそのまま真似しただけで
-			  理解できている訳ではないのでしっかり勉強したい。
-			</small>
-		      </div><!-- card-body end -->
-		    </div><!-- Card end -->
-
-		    <!-- 開発ツール -->
-		    <div class="card"><!-- Card rader and table -->
-		      <div style="width: 100%; text-align: center;">
-			<div id="dev-tool-area"></div>
-		      </div>
-		      <div class="card-body" style="text-align: left;">
-			<table class="table table-sm caption-top">
-			  <caption>※レベルは１〜５段階（１初心者、３普通、５プロ）</caption>
-			  <thead style="--bs-table-color: white; --bs-table-bg: #109618; opacity: 0.8;">
-			    <tr>
-			      <th>名前</th>
-			      <th>カテゴリー</th>
-			      <th>レベル</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th>Git/GitHub</th>
-			      <th>バージョン管理</th>
-			      <th>3</th>
-			    </tr>
-			    <tr>
-			      <th>Vim</th>
-			      <th>テキストエディター</th>
-			      <th>3</th>
-			    </tr>
-			      <th>Copilot</th>
-			      <th>生成AI</th>
-			      <th>2</th>
-			    </tr>
-			    <tr>
-			      <th>GitHub Actions</th>
-			      <th>CI/CD</th>
-			      <th>2</th>
-			    </tr>
-			    <tr>
-			      <th>Docker & Compose</th>
-			      <th>コンテナの構築</th>
-			      <th>1</th>
-			    </tr>
-			    <tr>
-			      <th>Figma</th>
-			      <th>デザインツール</th>
-			      <th>1</th>
-			    </tr>
-			    <tr>
-			      <th>Shell Script</th>
-			      <th>スクリプト言語</th>
-			      <th>1</th>
-			    </tr>
-			  </tbody>
-			</table>
-			<small>
-			  <mark>Copilot:</mark>適切な質問を心掛けていますが、まだまだ質問力の無さを痛感しています。<br>
-			  <mark>Docker & Compose:</mark>2025年１月から学び始めたので、これからWeb開発する際はどんどん構築していきます。<br>
-			  <mark>Figma:</mark>簡単且つシンプルなUI作成をしています。凝った事はまだまだです。<br>
-			  <mark>Git/GitHub:</mark>メインブランチのレポジトリをクローンし、そこからブランチを作成し開発を進め、
-			  ブランチから追加・コミットしたローカルリポジトリをプッシュ、
-			  メインブランチに戻りローカルリポジトリをプルするといった一通りの作業は行えます。
-			  チームでの開発は未経験です。<br>
-			  <mark>GH Actions:</mark>リポジトリのワークフローディレクトリ内にCI/CD用のyml拡張子のファイルを作成して
-			  テストとデプロイの自動化をします。<br>
-			  <mark>Shell Script:</mark>例えば、GitHubにレポジトリをプッシュする際に認証するアクセストークンですが、アクセストークンを保存しているファイル内からクリップボードに保存して貼り付けるという一連のコマンドをスクリプトファイルに書いてアクセストークンをクリップボードに登録するまでの作業を自動化するような程度です。<br>
-			  <mark>Vim:</mark>使いこなせているかと言われたらまだまだなので頑張ってレベル3です。<br>
-			  <mark>目標 課題:</mark>チーム開発にいつでも馴染めるよう、Slackの導入やGitとDockerのレベルを上げる。
-			</small>
-		      </div><!-- card-body end -->
-		    </div><!-- Card end -->
-		  </div><!-- CardGroup end -->
-		</div><!-- class="web-dev" -->
-
 	      </div>
 	    </div>
 	  </div>
-	</section>
+	</div>
+
+	<!-- レーダーチャート -->
+	<div class="card-group"><!-- card-group start -->
+	  <div class="card"><!-- Card rader and table -->
+	    <div style="width: 100%; text-align: center;">
+	      <div id="front-end-area"></div>
+	    </div>
+	    <div class="card-body" style="text-align: left;">
+	      <table class="table table-sm caption-top">
+		<caption>※レベルは１〜５段階（１初心者、３普通、５プロ）</caption>
+		<thead style="--bs-table-color: white; --bs-table-bg: #B82E2E; opacity: 0.8;">
+		  <tr>
+		    <th>名前</th>
+		    <th>カテゴリー</th>
+		    <th>レベル</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  </tr>
+		  <th>BootStrap</th>
+		  <th>フレームワーク</th>
+		  <th>3</th>
+		  </tr>
+		  <tr>
+		    <th>CSS</th>
+		    <th>マークアップ言語</th>
+		    <th>3</th>
+		  </tr>
+		  <tr>
+		    <tr>
+		      <th>HTML</th>
+		      <th>マークアップ言語</th>
+		      <th>3</th>
+		      <tr>
+			<th>JavaScript</th>
+			<th>プログラミング言語</th>
+			<th>2</th>
+		      </tr>
+		      <tr>
+			<th>jQuery</th>
+			<th>JSライブラリ</th>
+			<th>1</th>
+		      </tr>
+		</tbody>
+	      </table>
+	      <small>
+		<mark>BootStrap:</mark>レイアウト、コンテンツ、フォーム、
+		コンポーネント、ヘルパーのフレームを使ってデザインします。
+		CSSやHTMLのstyle属性を使ってちょっとしたカスタマイズはできます。<br>
+		<mark>CSS:</mark>変数などの利用はまだまだ乏しいですが、
+		各要素の調整といったことはできます。<br>
+		<mark>HTML:</mark>SEO対策として各ブロックに相応しいタグの配置、
+		見やすいコードを心掛けるなど。<br>
+		<mark>JavaScript:</mark>レスポンシブに各タグの値を変更する処理、
+		チャートライブラリやマークダウンライブラリの利用など。<br>
+		<mark>jQuery:</mark>非同期処理で使った程度。<br>
+		<mark>目標 課題:</mark>JavaScriptを極めてReactを触ってみたいと思いますが、
+		覚えることがあり過ぎていつになるのか。
+	      </small>
+	    </div><!-- card-body end -->
+	  </div><!-- Card end -->
+
+	  <!-- バックエンド -->
+	  <div class="card"><!-- Card rader and table -->
+	    <div style="width: 100%; text-align: center;">
+	      <div id="back-end-area"></div>
+	    </div>
+	    <div class="card-body" style="text-align: left;">
+	      <table class="table table-sm caption-top">
+		<caption>※レベルは１〜５段階（１初心者、３普通、５プロ）</caption>
+		<thead style="--bs-table-color: white; --bs-table-bg: #6633CC; opacity: 0.8;">
+		  <tr>
+		    <th>名前</th>
+		    <th>カテゴリー</th>
+		    <th>レベル</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+		    <th>Django</th>
+		    <th>フレームワーク</th>
+		    <th>3</th>
+		  </tr>
+		  <tr>
+		    <th>Linux</th>
+		    <th>OS（環境）</th>
+		    <th>3</th>
+		  </tr>
+		  <tr>
+		    <th>Python</th>
+		    <th>プログラミング言語</th>
+		    <th>3</th>
+		  </tr>
+		  <tr>
+		    <th>MySQL</th>
+		    <th>データベース管理</th>
+		    <th>2</th>
+		  </tr>
+		  <tr>
+		    <th>Firefall</th>
+		    <th>セキュリティ</th>
+		    <th>1</th>
+		  </tr>
+		  <tr>
+		    <th>Nginx</th>
+		    <th>Webサーバー</th>
+		    <th>1</th>
+		  </tr>
+		</tbody>
+	      </table>
+	      <small>
+		<mark>Django:</mark>CRUD（Create、Read、Update、Delete）操作、
+		メールサーバ－の設定、アプリケーションログの監視、データの暗号化と復号化、
+		ユーザーのアクセス管理、メディアファイル（画像や表形式等）の管理、
+		再利用可能なアプリ化、ユニットテスト。<br>
+		<mark>Firefall:</mark>ホスティングサービスの初期設定で一度構築。<br>
+		<mark>Linux:</mark>sshでホスティングサービスの環境に出入りしたり、
+		ファイルの転送、bashrcで環境変数の設定、crontabでスケジュール管理など。<br>
+		<mark>MySQL:</mark>Djangoで<kbd>python manage.py dbshell</kbd>を実行すると、
+		プロジェクトで接続しているデータベースに入って操作する事ができ、
+		極々簡単なクエリの操作程度。<br>
+		<mark>Nginx:</mark>SSL証明書（Let's Encrypt）の設定程度で、
+		まだまだ設定ファイルの構造をしっかり理解しているわけではありません。<br>
+		<mark>Python:</mark>ユニットテストとロギング。<br>
+		<mark>目標 課題:</mark>目標はチームでの開発。
+		まだまだDjangoには豊富な機能が盛りだくさんなので覚えたい。
+		NginxやFirefallの設定は動画教材のやり方をそのまま真似しただけで
+		理解できている訳ではないのでしっかり勉強したい。
+	      </small>
+	    </div><!-- card-body end -->
+	  </div><!-- Card end -->
+
+	  <!-- 開発ツール -->
+	  <div class="card"><!-- Card rader and table -->
+	    <div style="width: 100%; text-align: center;">
+	      <div id="dev-tool-area"></div>
+	    </div>
+	    <div class="card-body" style="text-align: left;">
+	      <table class="table table-sm caption-top">
+		<caption>※レベルは１〜５段階（１初心者、３普通、５プロ）</caption>
+		<thead style="--bs-table-color: white; --bs-table-bg: #109618; opacity: 0.8;">
+		  <tr>
+		    <th>名前</th>
+		    <th>カテゴリー</th>
+		    <th>レベル</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+		    <th>Git/GitHub</th>
+		    <th>バージョン管理</th>
+		    <th>3</th>
+		  </tr>
+		  <tr>
+		    <th>Vim</th>
+		    <th>テキストエディター</th>
+		    <th>3</th>
+		  </tr>
+		  <th>Copilot</th>
+		  <th>生成AI</th>
+		  <th>2</th>
+		    </tr>
+		    <tr>
+		      <th>GitHub Actions</th>
+		      <th>CI/CD</th>
+		      <th>2</th>
+		    </tr>
+		    <tr>
+		      <th>Docker & Compose</th>
+		      <th>コンテナの構築</th>
+		      <th>1</th>
+		    </tr>
+		    <tr>
+		      <th>Figma</th>
+		      <th>デザインツール</th>
+		      <th>1</th>
+		    </tr>
+		    <tr>
+		      <th>Shell Script</th>
+		      <th>スクリプト言語</th>
+		      <th>1</th>
+		    </tr>
+		</tbody>
+	      </table>
+	      <small>
+		<mark>Copilot:</mark>適切な質問を心掛けていますが、まだまだ質問力の無さを痛感しています。<br>
+		<mark>Docker & Compose:</mark>2025年１月から学び始めたので、これからWeb開発する際はどんどん構築していきます。<br>
+		<mark>Figma:</mark>簡単且つシンプルなUI作成をしています。凝った事はまだまだです。<br>
+		<mark>Git/GitHub:</mark>メインブランチのレポジトリをクローンし、そこからブランチを作成し開発を進め、
+		ブランチから追加・コミットしたローカルリポジトリをプッシュ、
+		メインブランチに戻りローカルリポジトリをプルするといった一通りの作業は行えます。
+		チームでの開発は未経験です。<br>
+		<mark>GH Actions:</mark>リポジトリのワークフローディレクトリ内にCI/CD用のyml拡張子のファイルを作成して
+		テストとデプロイの自動化をします。<br>
+		<mark>Shell Script:</mark>例えば、GitHubにレポジトリをプッシュする際に認証するアクセストークンですが、アクセストークンを保存しているファイル内からクリップボードに保存して貼り付けるという一連のコマンドをスクリプトファイルに書いてアクセストークンをクリップボードに登録するまでの作業を自動化するような程度です。<br>
+		<mark>Vim:</mark>使いこなせているかと言われたらまだまだなので頑張ってレベル3です。<br>
+		<mark>目標 課題:</mark>チーム開発にいつでも馴染めるよう、Slackの導入やGitとDockerのレベルを上げる。
+	      </small>
+	    </div><!-- card-body end -->
+	  </div><!-- Card end -->
+	</div><!-- CardGroup end -->
+      </section>
       <!-- プロジェクト節 -->
       <!-- テキストを挿入したら「text-center」をh1タグに入れる -->
       <section class="py-5 text-center bg-light" id="about">

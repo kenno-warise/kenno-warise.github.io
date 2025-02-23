@@ -373,11 +373,22 @@ const dev = [
   ["Shell Script",1,dev_tool],
 ];
 
+const data_analytics = "データ分析"
+const analytics = [
+  ["a",0,data_analytics],
+  ["b",0,data_analytics],
+  ["c",0,data_analytics],
+  ["d",0,data_analytics],
+  ["e",0,data_analytics],
+  ["f",0,data_analytics],
+];
+
 // 画面サイズに応じてaddChart関数を呼び出す
 function loadCharts() {
   addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding, title_fontsize, line_fontsize);
   addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding, title_fontsize, line_fontsize);
   addChart(dev[0][2], dev, "#109618", "dev-tool-area", width, padding, title_fontsize, line_fontsize);
+  addChart(analytics[0][2], analytics, "#adb5bd", "data-analytics-area", width, padding, title_fontsize, line_fontsize);
 }
 
 google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);
@@ -466,6 +477,7 @@ $(function(){
 	addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding, title_fontsize, line_fontsize);
 	addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding, title_fontsize, line_fontsize);
 	addChart(dev[0][2], dev, "#109618", "dev-tool-area", width, padding, title_fontsize, line_fontsize);
+        addChart(analytics[0][2], analytics, "#adb5bd", "data-analytics-area", width, padding, title_fontsize, line_fontsize);
       }
 
       google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);

@@ -15,8 +15,8 @@ async function loadMarkdownFiles(filePaths, elementIds) {
 
 // ページが読み込まれたら関数を呼び出す
 window.onload = () => {
-  const markdownFiles = ['README.md', 'skills.md', 'projects.md', 'contact.md'];
-  const elementIds = ['profile', 'skills', 'projects', 'contact'];
+  const markdownFiles = ['README.md', 'skills.md', 'projects.md'];
+  const elementIds = ['profile', 'skills', 'projects'];
   loadMarkdownFiles(markdownFiles, elementIds)
     .catch(error => console.error('Error loading markdown files:', error));
 };

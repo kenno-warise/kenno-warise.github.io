@@ -308,7 +308,7 @@ if(window.matchMedia("(max-width:575px)").matches){
     }
   });
 
-}else if (window.matchMedia('(min-width:576px)').matches) {
+}else if (window.matchMedia('(min-width:576px) and (max-width: 999px)').matches) {
   // PC処理
 
   // グラフの設定
@@ -340,6 +340,48 @@ if(window.matchMedia("(max-width:575px)").matches){
     if (smallTag) {
       smallTag.style.fontSize = '12px';
     }
+  });
+
+} else {
+
+  // 大画面
+
+  // グラフの設定
+  width = 230; // PC用の幅
+  padding = 45;
+  title_fontsize = 14;
+  line_fontsize = 12;
+
+  // グラフ下のテーブルの設定
+  // フォントサイズの設定
+  var tables = document.getElementsByTagName('table');
+
+  for (var i = 0; i < tables.length; i++) {
+    tables[i].style.fontSize = '12px';
+    // tables[i].style.marginTop = '0%';
+    // tables[i].style.marginBottom = '5%';
+  }
+
+  // smallタグのフォントサイズ設定
+  // すべてのcardクラスを持つ要素を取得
+  var cards = document.querySelectorAll('.card');
+
+  // 各カード要素をループ処理
+  cards.forEach(card => {
+    // カード内のsmallタグを取得
+    const smallTag = card.querySelector('small');
+
+    // スタイルを変更
+    if (smallTag) {
+      smallTag.style.fontSize = '12px';
+    }
+  });
+
+  // カードグループの要素にcontainerを追加する
+  var card_group = document.querySelectorAll('.card-group');
+
+  card_group.forEach(group => {
+    group.classList.add('container');
   });
 };
 
@@ -375,12 +417,12 @@ const dev = [
 
 const data_analytics = "データ分析"
 const analytics = [
-  ["a",0,data_analytics],
-  ["b",0,data_analytics],
-  ["c",0,data_analytics],
-  ["d",0,data_analytics],
-  ["e",0,data_analytics],
-  ["f",0,data_analytics],
+  ["Pandas",3,data_analytics],
+  ["Matplotlib",2,data_analytics],
+  ["Scikit-learn",2,data_analytics],
+  ["Numpy",1,data_analytics],
+  ["Seaborn",1,data_analytics],
+  ["Tensolflow",1,data_analytics],
 ];
 
 // 画面サイズに応じてaddChart関数を呼び出す
@@ -388,7 +430,7 @@ function loadCharts() {
   addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding, title_fontsize, line_fontsize);
   addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding, title_fontsize, line_fontsize);
   addChart(dev[0][2], dev, "#109618", "dev-tool-area", width, padding, title_fontsize, line_fontsize);
-  addChart(analytics[0][2], analytics, "#adb5bd", "data-analytics-area", width, padding, title_fontsize, line_fontsize);
+  addChart(analytics[0][2], analytics, "#0dcaf0", "data-analytics-area", width, padding, title_fontsize, line_fontsize);
 }
 
 google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);
@@ -436,7 +478,7 @@ $(function(){
 	  }
 	});
 
-      } else if (window.matchMedia('(min-width:576px)').matches) {
+      } else if (window.matchMedia('(min-width:576px) and (max-width: 999px)').matches) {
 	// PC処理
 
 	// グラフの設定
@@ -470,6 +512,54 @@ $(function(){
 	  }
 	});
 
+	// カードグループの要素のcontainerを削除する
+	var card_group = document.querySelectorAll('.card-group');
+
+	card_group.forEach(group => {
+	  group.classList.remove('container');
+	});	
+
+      } else {
+
+	// 大画面
+
+	// グラフの設定
+	width = 230; // PC用の幅
+	padding = 45;
+	title_fontsize = 14;
+	line_fontsize = 12;
+
+	// グラフ下のテーブルの設定
+	// フォントサイズの設定
+	var tables = document.getElementsByTagName('table');
+
+	for (var i = 0; i < tables.length; i++) {
+	  tables[i].style.fontSize = '12px';
+	  // tables[i].style.marginTop = '0%';
+	  // tables[i].style.marginBottom = '5%';
+	}
+
+	// smallタグのフォントサイズ設定
+	// すべてのcardクラスを持つ要素を取得
+	var cards = document.querySelectorAll('.card');
+
+	// 各カード要素をループ処理
+	cards.forEach(card => {
+	  // カード内のsmallタグを取得
+	  const smallTag = card.querySelector('small');
+
+	  // スタイルを変更
+	  if (smallTag) {
+	    smallTag.style.fontSize = '12px';
+	  }
+	});
+
+	// カードグループの要素にcontainerを追加する
+	var card_group = document.querySelectorAll('.card-group');
+
+	card_group.forEach(group => {
+	  group.classList.add('container');
+	});
       };
 
       // 画面サイズに応じてaddChart関数を呼び出す
@@ -477,7 +567,7 @@ $(function(){
 	addChart(front[0][2], front, "#B82E2E", "front-end-area", width, padding, title_fontsize, line_fontsize);
 	addChart(back[0][2], back, "#6633CC", "back-end-area", width, padding, title_fontsize, line_fontsize);
 	addChart(dev[0][2], dev, "#109618", "dev-tool-area", width, padding, title_fontsize, line_fontsize);
-        addChart(analytics[0][2], analytics, "#adb5bd", "data-analytics-area", width, padding, title_fontsize, line_fontsize);
+        addChart(analytics[0][2], analytics, "#0dcaf0", "data-analytics-area", width, padding, title_fontsize, line_fontsize);
       }
 
       google.charts.load('upcoming', {'packages': ['vegachart']}).then(loadCharts);

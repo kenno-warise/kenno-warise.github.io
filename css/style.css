@@ -41,7 +41,7 @@ p.lead {
 /* 見出しのデザイン  end */
 
 /* section内の枠を画面いっぱいまで調整する */
-section {
+section .padding {
   padding-top: 20%;
   padding-bottom: 45%;
 }

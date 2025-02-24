@@ -76,19 +76,23 @@
     <main>
       <!-- プロフィール節 -->
       <section class="py-5 bg-light" id="_profile">
-	<div class="container">
-	  <div class="row py-lg-5">
-	    <div class="col-lg-12 col-md-12 mx-auto">
-	      <h1 class="display-6 text-center fw-bold">自己紹介 <i class="bi bi-person-lines-fill"></i></h1>
-	      <!-- div class="lead line-height res-hei" id="profile"-->
-	      <div class="line-height" id="profile">
+	<div class="padding">
+	  <div class="container">
+	    <div class="row py-lg-5">
+	      <div class="col-lg-12 col-md-12 mx-auto">
+		<h1 class="display-6 text-center fw-bold">自己紹介 <i class="bi bi-person-lines-fill"></i></h1>
+		<!-- div class="lead line-height res-hei" id="profile"-->
+		<div class="line-height" id="profile">
+		</div>
 	      </div>
 	    </div>
 	  </div>
+	</div>
       </section>
       <!-- スキル節 -->
       <!-- テキストを挿入したら「text-center」をh1タグに入れる -->
       <section class="py-5" id="_skills">
+	<div class="padding">
 	<div class="container">
 	  <div class="row py-lg-5">
 	    <div class="col-lg-12 col-md-12 mx-auto">
@@ -327,13 +331,14 @@
 	  <div>
 	    <h4 class="text-center fw-bold">データ分析のスキルセット</h4>
 	    <p class="fw-medium">
-	    準備中...
+	    データ分析にはPythonのライブラリを使用しています。
+	    実装環境はjupyter notebook上で行っています。
+	    分析しているのは、Google Analyticsのデータや家計簿アプリから取得した
+	    CSVフォーマットのファイル、AppleのiCloudから取得したカレンダーのデータなどです。
+            分析と言っても専門的な事ができるわけではなく、ただデータをグラフに可視化し、
+	    機械学習で推論してみるといった程度です。
+	    画像認識やテキスト生成の実装では深層学習（ディープラーニング）も使用しました。
 	    </p>
-
-	    <p class="fw-medium">スキルセットの詳細情報はこちらのリンクです。</p>
-	    <ul>
-	      <li><a href="#front-end-area">データ分析</a></li>
-	    </ul>
 	  </div>
 	</div>
 
@@ -348,7 +353,7 @@
 	    <div class="card-body" style="text-align: left;">
 	      <table class="table table-sm caption-top">
 		<caption>※レベルは１〜５段階（１初心者、３普通、５プロ）</caption>
-		<thead style="--bs-table-color: white; --bs-table-bg: #adb5bd; opacity: 0.8;">
+		<thead style="--bs-table-color: white; --bs-table-bg: #0dcaf0; opacity: 0.8;">
 		  <tr>
 		    <th>名前</th>
 		    <th>カテゴリー</th>
@@ -356,25 +361,60 @@
 		  </tr>
 		</thead>
 		<tbody>
+		  <tr>
+		  <th>Pandas</th>
+		  <th>データ分析ライブラリ</th>
+		  <th>3</th>
 		  </tr>
-		  <th>#</th>
-		  <th>#</th>
-		  <th>0</th>
+		  <tr>
+		  <th>Matplotlib</th>
+		  <th>グラフ可視化ライブラリ</th>
+		  <th>2</th>
+		  </tr>
+		  <tr>
+		  <th>Scikit-learn</th>
+		  <th>機械学習ライブラリ</th>
+		  <th>2</th>
+		  </tr>
+		  <tr>
+		  <th>Numpy</th>
+		  <th>数値計算ライブラリ</th>
+		  <th>1</th>
+		  </tr>
+		  <tr>
+		  <th>Seaborn</th>
+		  <th>グラフ可視化ライブラリ</th>
+		  <th>1</th>
+		  </tr>
+		  <tr>
+	          <th>Tensorflow/Keras</th>
+		  <th>深層学習ライブラリ</th>
+		  <th>1</th>
 		  </tr>
 		</tbody>
 	      </table>
 	      <small>
-		<mark>目標 課題:</mark>
+		<mark>Pandas:</mark>データ分析ツールで最もポピュラー且つ必須ツールということもあり使用頻度が高いです。</br>
+		<mark>Matplotlib:</mark>データを可視化するために必要なためよく使います。折れ線、棒、円、テーブルのグラフを実装して
+		比較したりなど。</br>
+		<mark>Scikit-learn:</mark>Google Analyticsのデータから閲覧数をトレーニングして推論するといった実装経験です。</br>
+		<mark>Numpy:</mark>深層学習でデータをトレーニングする際などに使用する程度の経験。</br>
+		<mark>Seaborn:</mark>使用頻度が低いので凝った事はできないです。</br>
+		<mark>Tensolflow/Keras:</mark>画像認識はテキスト生成のために使用。ただPCの性能が低いので使用はごく稀です。</br>
+		<mark>目標 課題:</mark>データの可視化スキルを生かしてサービスを立ち上げたい。
+		生成AIツールのTransformersを使ってオンリーワンな生成AIを構築したいです。
 	      </small>
 	    </div><!-- card-body end -->
 	  </div><!-- Card end -->
 	  <div class="card"><!-- Card rader and table -->
 	  </div>
 	</div><!-- CardGroup end -->
+	</div>
       </section>
       <!-- プロジェクト節 -->
       <!-- テキストを挿入したら「text-center」をh1タグに入れる -->
       <section class="py-5 text-center bg-light" id="about">
+	<div class="padding">
 	<div class="container">
 	  <div class="row py-lg-5">
 	    <div class="col-lg-8 col-md-8 mx-auto">
@@ -401,10 +441,12 @@
 	    </div>
 	  </div>
 	</div>
+	</div>
       </section>
       <!-- コンタクト節 -->
       <!-- テキストを挿入したら「text-center」をh1タグに入れる -->
       <section class="py-5 text-center" id="about">
+	<div class="padding">
 	<div class="container">
 	  <div class="row py-lg-5">
 	    <div class="col-lg-8 col-md-8 mx-auto">
@@ -419,7 +461,7 @@
 	  <form>
 	    <div class="row">
 	      <div class="col">
-		<label for="exampleInputName" class="form-label">From Name</label>
+		<label for="exampleInputName" class="form-label">From name</label>
 		<input type="text" class="form-control" placeholder="" aria-label="First name">
 	      </div>
 	      <div class="col">
@@ -436,7 +478,7 @@
 	    <button type="submit" class="btn btn-success">Submit</button>
 	  </form>
 	</div>
-
+	</div>
       </section>
     </main>
 

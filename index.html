@@ -16,7 +16,7 @@
 
   <!-- Collapse -->
   <div class="sticky-top">
-  <div class="collapse bg-dark p-4" id="navbarToggleExternalContent" data-bs-theme="dark">
+    <div class="collapse bg-dark p-4" id="navbarToggleExternalContent" data-bs-theme="dark">
     <div class="container">
       <div class="row">
 	<div class="col-sm-8">
@@ -335,7 +335,7 @@
 	    実装環境はjupyter notebook上で行っています。
 	    分析しているのは、Google Analyticsのデータや家計簿アプリから取得した
 	    CSVフォーマットのファイル、AppleのiCloudから取得したカレンダーのデータなどです。
-            分析と言っても専門的な事ができるわけではなく、ただデータをグラフに可視化し、
+	    分析と言っても専門的な事ができるわけではなく、ただデータをグラフに可視化し、
 	    機械学習で推論してみるといった程度です。
 	    画像認識やテキスト生成の実装では深層学習（ディープラーニング）も使用しました。
 	    </p>
@@ -362,34 +362,34 @@
 		</thead>
 		<tbody>
 		  <tr>
-		  <th>Pandas</th>
-		  <th>データ分析ライブラリ</th>
-		  <th>3</th>
+		    <th>Pandas</th>
+		    <th>データ分析ライブラリ</th>
+		    <th>3</th>
 		  </tr>
 		  <tr>
-		  <th>Matplotlib</th>
-		  <th>グラフ可視化ライブラリ</th>
-		  <th>2</th>
+		    <th>Matplotlib</th>
+		    <th>グラフ可視化ライブラリ</th>
+		    <th>2</th>
 		  </tr>
 		  <tr>
-		  <th>Scikit-learn</th>
-		  <th>機械学習ライブラリ</th>
-		  <th>2</th>
+		    <th>Scikit-learn</th>
+		    <th>機械学習ライブラリ</th>
+		    <th>2</th>
 		  </tr>
 		  <tr>
-		  <th>Numpy</th>
-		  <th>数値計算ライブラリ</th>
-		  <th>1</th>
+		    <th>Numpy</th>
+		    <th>数値計算ライブラリ</th>
+		    <th>1</th>
 		  </tr>
 		  <tr>
-		  <th>Seaborn</th>
-		  <th>グラフ可視化ライブラリ</th>
-		  <th>1</th>
+		    <th>Seaborn</th>
+		    <th>グラフ可視化ライブラリ</th>
+		    <th>1</th>
 		  </tr>
 		  <tr>
-	          <th>Tensorflow/Keras</th>
-		  <th>深層学習ライブラリ</th>
-		  <th>1</th>
+		    <th>Tensorflow/Keras</th>
+		    <th>深層学習ライブラリ</th>
+		    <th>1</th>
 		  </tr>
 		</tbody>
 	      </table>
@@ -428,8 +428,11 @@
 	<div class="container">
 	  <div class="row row-cols-1 row-cols-md-3 g-4 projects-img">
 	    <div class="col">
-		<img src="img/project.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#exampleModal">
-	    </div>
+	      <figure class="figure">
+		<img src="img/project.jpg" class="card-img-top figure-img" alt="..." data-bs-toggle="modal" data-bs-target="#exampleModal">
+	      <figcaption class="figure-caption">Project title</figcaption>
+	      </figure> 
+           </div>
 	    <div class="col">
 		<img src="img/project.jpg" class="card-img-top" alt="...">
 	    </div>
@@ -447,47 +450,32 @@
 	  <div class="modal-dialog modal-dialog-scrollable">
 	    <div class="modal-content">
 	      <div class="modal-header">
-		<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+		<h1 class="modal-title fs-5" id="exampleModalLabel">Project title</h1>
 		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	      </div>
 	      <div class="modal-body">
-		This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal.
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		This content should appear at the bottom after you scroll.
+		<figure class="figure">
+		  <img src="img/project.jpg" class="figure-img img-fluid rounded" alt="...">
+		  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+		</figure>
+		<figure class="figure">
+		  <img src="img/project.jpg" class="figure-img img-fluid rounded" alt="...">
+		  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+		</figure>
+		<figure class="figure">
+		  <img src="img/project.jpg" class="figure-img img-fluid rounded" alt="...">
+		  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+		</figure>
 	      </div>
-	      <div class="modal-footer">
-	      </div>
+	      <hr>
+	      <figure class="text-center">
+		<blockquote class="blockquote">
+		  <p>実行環境/使用言語</p>
+		</blockquote>
+		<figcaption class="blockquote-footer">
+		  Docker Django
+		</figcaption>
+	      </figure>
 	    </div>
 	  </div>
 	</div>
@@ -530,6 +518,53 @@
 	</div>
 	</div>
       </section>
+
+      <!-- Mustache test -->
+      <!--
+      <section>
+	<div id="target"></div>
+	<!-- Mustache -->
+	<script id="template" type="x-tmpl-mustache">
+	  <div class="card-group"><!-- card-group start -->
+	  {{#card}}
+	    <div class="card"><!-- Card rader and table -->
+	      <div style="width: 100%; text-align: center;">
+		<div id="{{rader-chart-area}}"></div>
+	      </div>
+	      <div class="card-body" style="text-align: left;">
+		<table class="table table-sm caption-top">
+		  <caption>※レベルは１〜５段階（１初心者、３普通、５プロ）</caption>
+		  <thead style="--bs-table-color: white; --bs-table-bg: {{color}}; opacity: 0.8;">
+		    <tr>
+		      <th>名前</th>
+		      <th>カテゴリー</th>
+		      <th>レベル</th>
+		    </tr>
+		  </thead>
+		   <tbody>
+		   {{#tbody}}
+		    <tr>
+		    <td>{{name}}</td>
+		    <td>{{category}}</td>
+		    <td>{{level}}</td>
+		    </tr>
+		    {{/tbody}}
+		    </tbody>
+		</table>
+		<small>
+		{{#tbody}}
+		  <mark>{{name}}:</mark>{{detail}}<br>
+		  {{/tbody}}
+		  <mark>目標 課題:</mark>{{goals}}
+		</small>
+	      </div><!-- card-body end -->
+	    </div><!-- Card end -->
+	    {{/card}}
+	  </div><!-- CardGroup end -->
+	</script>
+      </section>
+      -->
+
     </main>
 
   <!-- Footer -->
@@ -542,10 +577,14 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <!-- js Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <!-- Google Charts -->
   <script src='https://www.gstatic.com/charts/loader.js'></script>
   <!-- marked.jsのCDN -->
   <script src="https://cdn.jsdelivr.net/npm/marked@2.0.0/marked.min.js"></script>
+  <!-- Mustache.js -->
+  <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
   <!-- レーダーチャート -->
   <script src="js/rader_chart.js" defer></script>
   <!-- 環境に応じてベースパスを設定 -->
@@ -554,11 +593,12 @@
   <script src="js/read_markdown_files.js" defer></script>
   <!-- 画面切り替えによるレスポンシブ対応 -->
   <script src="js/change_response.js" defer></script>
-  <!-- Vaga Rader Chart -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <!-- Mustacheのテスト -->
+  <script src="js/mustache_test.js" defer></script>
+
+  <!-- Free JS -->
   <script>
+
 
     // マークダウンファイル（mdファイル）内のtableを取得したいが、何故かしゅとくできないので、
     // 直接index.htmlにtableタグを書き込んで要素を取得して表示している。
@@ -583,6 +623,4 @@
 
   </script>
 
-  <!-- js Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
